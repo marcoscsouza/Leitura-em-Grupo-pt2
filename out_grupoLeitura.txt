@@ -1,0 +1,11 @@
+12/12/2022;Leitura para aprender;distância2;Marcos;Hobbie
+2017;Corvo e outros contos;42.79;horror;Edgar Allan Poe;Traduzido
+2019;Berserk Deluxe;353.5;1;Desenvolvimento;Kentaro Miura
+2002;A imagem do 3º Reich;28.9;globo;historia;285
+2017;O chamado de Cthulhu e outros contos;17.79;horror;H. P. Lovecraft;Traduzido
+2021;PlayStation;19.9;Europa;Jogos;285
+2017;Shingeki no kyojin;17.5;16;Desenvolvimento;Hajime Isayama
+2019;Spawn Compendium;52.5;1;Desenvolvimento;Todd McFarlane
+2017;Head first! Java;149.9;didático;Bert Bates;Sem tradução
+2021;Contigo: Big Brother Brasil 2018;99.9;perfil;Atualidades;285
+12/12/2022;Marcos;9

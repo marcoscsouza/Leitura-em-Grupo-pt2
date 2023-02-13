@@ -1,0 +1,13 @@
+br\com\marcoscsouza\leituraemgrupo\LeituraemgrupoApplication.class
+br\com\marcoscsouza\leituraemgrupo\model\test\RevistaTest.class
+br\com\marcoscsouza\leituraemgrupo\model\test\GrupoTest.class
+br\com\marcoscsouza\leituraemgrupo\model\domain\Literatura.class
+br\com\marcoscsouza\leituraemgrupo\model\test\LeituraTest.class
+br\com\marcoscsouza\leituraemgrupo\model\domain\Quadrinho.class
+br\com\marcoscsouza\leituraemgrupo\model\domain\Revista.class
+br\com\marcoscsouza\leituraemgrupo\model\domain\Grupo.class
+br\com\marcoscsouza\leituraemgrupo\model\test\QuadrinhoTest.class
+br\com\marcoscsouza\leituraemgrupo\model\test\ArquivoTest.class
+br\com\marcoscsouza\leituraemgrupo\model\domain\Leitura.class
+br\com\marcoscsouza\leituraemgrupo\model\domain\Livro.class
+br\com\marcoscsouza\leituraemgrupo\model\test\LivroTest.class

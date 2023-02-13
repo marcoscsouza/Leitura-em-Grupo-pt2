@@ -1,0 +1,10 @@
+p;Leitura para aprender;presencial;2;Marcos;Hobbie
+l;2017;Corvo e outros contos;42.79f;horror;Edgar Allan Poe;Traduzido
+q;2019;Berserk Deluxe;353.50f;1;false;Kentaro Miura
+r;2002;A imagem do 3º Reich;28.90f;globo;historia;285
+l;2017;O chamado de Cthulhu e outros contos;17.79f;horror;H. P. Lovecraft;Traduzido
+r;2021;PlayStation;19.90f;Europa;Jogos;285
+q;2017;Shingeki no kyojin;17.50f;16;true;Hajime Isayama
+q;2019;Spawn Compendium;52.50f;1;true;Todd McFarlane
+l;2017;Head first! Java;149.90f;didático;Bert Bates;Não Traduzido
+r;2021;Contigo: Big Brother Brasil 2018;99.90f;perfil;Atualidades;285
