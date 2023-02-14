@@ -9,10 +9,18 @@ public class Usuario {
 	private String tipo;
 	private String nivel;
 	
+	public Usuario() {
+	}
+	
+	public Usuario(String email, String senha) {
+		this();
+		this.setEmail(email);
+		this.setSenha(senha);
+	}
+	
 	public Usuario(String nome, String senha, String email) {
+		this(email,senha);
 		this.nome = nome;
-		this.senha = senha;
-		this.email = email;
 	}
 	
 	@Override

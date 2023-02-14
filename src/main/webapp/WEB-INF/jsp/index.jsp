@@ -13,12 +13,12 @@
 	src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-	<div class="container mt-3">
+	<div class="container text-center">
 		<h2>Leitura em Grupo</h2>
-
 		
-		<h4>Cadastro de <a href="/usuario">usuários</a></h4>
+		<h4>Lista de Usuários</h4>
+		
+		<button class="btn btn-primary" onclick="window.location.href='/usuario/lista'">Lista</button>
 	</div>
-
 </body>
 </html>
