@@ -4,6 +4,7 @@ import br.com.marcoscsouza.leituraemgrupo.auxiliar.Constante;
 
 public class Grupo {
 	
+	private Integer id;
 	private int integrantes; 
 	private String nomeResponsavel;
 	private boolean ehEstudo;
@@ -24,6 +25,16 @@ public class Grupo {
 
 	public boolean isEhEstudo() {
 		return ehEstudo;
+	}
+	
+	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
 	@Override

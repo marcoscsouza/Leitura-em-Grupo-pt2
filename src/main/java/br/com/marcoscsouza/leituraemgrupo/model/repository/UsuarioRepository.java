@@ -1,18 +1,22 @@
 package br.com.marcoscsouza.leituraemgrupo.model.repository;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 
 public class UsuarioRepository {
 
-	private static List<Usuario> lista = new ArrayList<Usuario>();
+	private static Integer id = 1;
+	private static Map<Integer, Usuario> mapaUsuario = new HashMap<Integer, Usuario>();
 
 	public static boolean incluir(Usuario usuario) {
 
+		usuario.setId(id++);
+
 		try {
-			lista.add(usuario);
+			mapaUsuario.put(usuario.getId(), usuario);
 			return true;
 		} catch (Exception e) {
 			return false;
@@ -20,8 +24,13 @@ public class UsuarioRepository {
 
 	}
 
-	public static List<Usuario> obterLista() {
-		return lista;
+	public static Usuario excluir(Integer key) {
+		return mapaUsuario.remove(key);
+	}
+
+	public static Collection<Usuario> obterLista() {
+		return mapaUsuario.values();
+
 	}
 
 }

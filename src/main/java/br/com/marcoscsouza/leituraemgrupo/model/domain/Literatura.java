@@ -6,6 +6,7 @@ import br.com.marcoscsouza.leituraemgrupo.exceptions.RevistaInvalidoExceptions;
 
 public abstract class Literatura {
 
+	private Integer id;
 	private int anoPublicado;
 	private String titulo;
 	private float valor;
@@ -41,6 +42,15 @@ public abstract class Literatura {
 	public float getValor() {
 		return valor;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 	
 	
 	

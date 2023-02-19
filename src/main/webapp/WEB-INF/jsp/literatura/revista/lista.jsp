@@ -6,14 +6,14 @@
 <head>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <meta charset="ISO-8859-1">
-<title>Cadastro de Usuário</title>
+<title>Cadastro de revista</title>
 </head>
 <body>
 
 <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container">
-			<h3>Listagem de Usuários</h3>
+			<h3>Listagem de revista</h3>
 
 			<c:if test="${not empty mensagem}">
 				<div class="alert alert-success">
@@ -22,37 +22,37 @@
 			</c:if>
 
 
-		<c:if test="${empty usuarios}">
-			<h5>Não existe usuarios cadastrados!</h5>
+		<c:if test="${empty revistas}">
+			<h5>Não existe revistas cadastrados!</h5>
 		</c:if>
 
-		<c:if test="${not empty usuarios}">
-			<h5>Quantidade de usuários cadastrados: ${usuarios.size()}!</h5>
+		<c:if test="${not empty revistas}">
+			<h5>Quantidade de revistas cadastrados: ${revistas.size()}!</h5>
 
 			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>Nome</th>
-						<th>Senha</th>
-						<th>E-mail</th>
-						<th>idade</th>
-						<th>Tipo preferido</th>
-						<th>nível de Leitura</th>
+						<th>titulo</th>
+						<th>instituto</th>
+						<th>edicao</th>
+						<th>categoria</th>
+						<th>ano publicação</th>
+						<th>valor</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="u" items="${usuarios}">
+					<c:forEach var="r" items="${revistas}">
 						<tr>
-							<td>${u.id}</td>
-							<td>${u.nome}</td>
-							<td>${u.senha}</td>
-							<td>${u.email}</td>
-							<td>${u.idade}</td>
-							<td>${u.tipo}</td>
-							<td>${u.nivel}</td>
-							<td><a href="/usuario/${u.id}/excluir">Excluir</a></td>
+							<td>${r.id}</td>
+							<td>${r.titulo}</td>
+							<td>${r.instituto}</td>
+							<td>${r.edicao}</td>
+							<td>${r.categoria}</td>
+							<td>${r.anoPublicado}</td>
+							<td>${r.valor}</td>
+							<td><a href="/revista/${r.id}/excluir">Excluir</a></td>
 						</tr>
 					</c:forEach>
 					</c:if>

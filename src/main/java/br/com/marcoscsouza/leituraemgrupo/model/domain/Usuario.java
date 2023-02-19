@@ -1,38 +1,35 @@
 package br.com.marcoscsouza.leituraemgrupo.model.domain;
 
 public class Usuario {
-	
+
+	private Integer id;
+
 	private String nome;
 	private String senha;
 	private String email;
 	private int idade;
 	private String tipo;
 	private String nivel;
-	
+
 	public Usuario() {
 	}
-	
+
 	public Usuario(String email, String senha) {
 		this();
 		this.setEmail(email);
 		this.setSenha(senha);
 	}
-	
+
 	public Usuario(String nome, String senha, String email) {
-		this(email,senha);
+		this(email, senha);
 		this.nome = nome;
 	}
-	
+
 	@Override
 	public String toString() {
-		return String.format(" O usuário %s das credenciais %s e %s, %d idade."
-				+ " Gosta de ler %s e tem o nível %s de leitura.",
-				nome,
-				senha,
-				email,
-				idade, 
-				tipo, 
-				nivel);
+		return String.format(
+				" O usuário %s das credenciais %s e %s, %d idade." + " Gosta de ler %s e tem o nível %s de leitura.",
+				nome, senha, email, idade, tipo, nivel);
 	}
 
 	public String getNome() {
@@ -82,12 +79,13 @@ public class Usuario {
 	public void setNivel(String nivel) {
 		this.nivel = nivel;
 	}
-	
-	
-	
-	
-	
-	
-	
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 }
