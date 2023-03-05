@@ -10,16 +10,11 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
-
 
 
 	<div class="container text-center">
 		<h2>Leitura em Grupo</h2>
-
-
-
 	</div>
 </body>
 </html>

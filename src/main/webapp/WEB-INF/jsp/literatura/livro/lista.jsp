@@ -22,7 +22,7 @@
 				<strong>Sucesso!</strong> ${mensagem}
 			</div>
 		</c:if>
-		<button type="submit">Novo</button>
+		<button type="submit" class="btn btn-primary" >Cadastrar</button>
 		</form>
 
 		<c:if test="${empty livros}">
