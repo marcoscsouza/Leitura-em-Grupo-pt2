@@ -17,6 +17,8 @@
 		<form action="quadrinho/incluir" method="post">
 			<h3>Cadastro de quadrinhos</h3>
 
+
+
 			<div class="form-group">
 				<label>Titulo:</label> <input type="text" class="form-control" name="titulo" value="Shingeki no Kyojin">
 				<label>Ilustrador:</label> <input type="text" class="form-control" name="ilustrador" value="Hydeo Kojima">
@@ -26,10 +28,12 @@
 			</div>
 
 			<div class="form-group">
-                <label>Finalizado:</label> <select class="form-control" name="finalizado">
+                <label>Finalizado:</label>
+                <select class="form-control" name="finalizado">
                     <option value="true" select>Sim</option>
                     <option value="false">Não</option>
                 </select>
+            </div>
 
 			<button class="btn btn-primary" type="submit">Cadastrar</button>
 		</form>

@@ -15,11 +15,14 @@
 	<div class="container">
 			<h3>Listagem de revista</h3>
 
-			<c:if test="${not empty mensagem}">
-				<div class="alert alert-success">
-					<strong>Sucesso!</strong> ${mensagem}
-				</div>
-			</c:if>
+            <form action="/revista" method="get">
+                <c:if test="${not empty mensagem}">
+                    <div class="alert alert-success">
+                        <strong>Sucesso!</strong> ${mensagem}
+                    </div>
+                </c:if>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
 
 
 		<c:if test="${empty revistas}">
