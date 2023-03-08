@@ -1,5 +1,7 @@
 package br.com.marcoscsouza.leituraemgrupo.controller;
 
+import br.com.marcoscsouza.leituraemgrupo.model.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,10 @@ public class UsuarioController {
 
 	private String msg;
 
+	@Autowired
+	private UsuarioService usuarioService;
+
+
 	@RequestMapping(value = "/usuario", method = RequestMethod.GET)
 	public String TelaCadastro() {
 
@@ -25,7 +31,8 @@ public class UsuarioController {
 	@GetMapping(value = "/usuario/lista")
 	public String telaLista(Model model) {
 
-		model.addAttribute("usuarios", UsuarioRepository.obterLista());
+
+		model.addAttribute("usuarios", usuarioService.obterLista());
 
 		model.addAttribute("mensagem", msg);
 		msg = null;
@@ -39,7 +46,7 @@ public class UsuarioController {
 
 		msg = "usuario " + usuario.getNome() + " criado com sucesso!";
 
-		UsuarioRepository.incluir(usuario);
+		usuarioService.incluir(usuario);
 
 		return "redirect:/";
 	}
@@ -47,7 +54,7 @@ public class UsuarioController {
 	@GetMapping(value = "/usuario/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		Usuario usuario = UsuarioRepository.excluir(id);
+		Usuario usuario = usuarioService.excluir(id);
 
 		msg = "Exclusão do usuario " + usuario.getNome() + " criado com sucesso!";
 

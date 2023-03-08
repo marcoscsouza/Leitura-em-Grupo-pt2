@@ -5,13 +5,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class UsuarioRepository {
 
 	private static Integer id = 1;
 	private static Map<Integer, Usuario> mapaUsuario = new HashMap<Integer, Usuario>();
 
-	public static boolean incluir(Usuario usuario) {
+	public boolean incluir(Usuario usuario) {
 
 		usuario.setId(id++);
 
@@ -24,11 +26,11 @@ public class UsuarioRepository {
 
 	}
 
-	public static Usuario excluir(Integer key) {
+	public Usuario excluir(Integer key) {
 		return mapaUsuario.remove(key);
 	}
 
-	public static Collection<Usuario> obterLista() {
+	public Collection<Usuario> obterLista() {
 		return mapaUsuario.values();
 
 	}
