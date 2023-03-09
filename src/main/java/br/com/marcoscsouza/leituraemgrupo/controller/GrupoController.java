@@ -1,5 +1,7 @@
 package br.com.marcoscsouza.leituraemgrupo.controller;
 
+import br.com.marcoscsouza.leituraemgrupo.model.service.GrupoService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +16,9 @@ public class GrupoController {
 
 	private String msg;
 
+	@Autowired
+	private GrupoService grupoService;
+
 	@GetMapping(value = "/grupo")
 	public String telaCadastro() {
 		return "grupo/cadastro";
@@ -22,7 +27,7 @@ public class GrupoController {
 	@GetMapping(value = "/grupo/lista")
 	public String telaLista(Model model) {
 		
-		model.addAttribute("grupos", GrupoRepository.obterLista());
+		model.addAttribute("grupos", grupoService.obterLista());
 		
 		model.addAttribute("mensagem", msg);
 		msg = null;
@@ -36,7 +41,7 @@ public class GrupoController {
 
 		msg = "grupo do " + grupo.getNomeResponsavel() + " criado com sucesso!";
 
-		GrupoRepository.incluir(grupo);
+		grupoService.incluir(grupo);
 
 		return "redirect:/grupo/lista";
 	}
@@ -44,7 +49,7 @@ public class GrupoController {
 	@GetMapping(value = "/grupo/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		Grupo grupo = GrupoRepository.excluir(id);
+		Grupo grupo = grupoService.excluir(id);
 
 		msg = "Exclusão do grupo do " + grupo.getNomeResponsavel() + " feito com sucesso!";
 

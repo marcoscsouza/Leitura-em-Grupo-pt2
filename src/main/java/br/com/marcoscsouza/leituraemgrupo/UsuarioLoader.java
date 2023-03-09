@@ -27,7 +27,6 @@ public class UsuarioLoader implements ApplicationRunner {
 
             usuarioService.incluir(usuario);
 
-
             System.out.println("Cadastrado com sucesso!!" + usuario.toString());
         }
     }

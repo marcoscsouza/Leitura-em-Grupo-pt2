@@ -1,5 +1,7 @@
 package br.com.marcoscsouza.leituraemgrupo.controller;
 
+import br.com.marcoscsouza.leituraemgrupo.model.service.LivroService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +16,10 @@ public class LivroController {
 
 	private String msg;
 
+	@Autowired
+	private LivroService livroService;
+
+
 	@GetMapping(value = "/livro")
 	public String telaCadastro() {
 		return "literatura/livro/cadastro";
@@ -22,7 +28,7 @@ public class LivroController {
 	@GetMapping(value = "/livro/lista")
 	public String telaLista(Model model) {
 
-		model.addAttribute("livros", LivroRepository.obterLista());
+		model.addAttribute("livros", livroService.obterLista());
 
 		model.addAttribute("mensagem", msg);
 		msg = null;
@@ -36,7 +42,7 @@ public class LivroController {
 
 		msg = "livro " + livro.getTitulo() + " criado com sucesso!";
 
-		LivroRepository.incluir(livro);
+		livroService.incluir(livro);
 
 		return "redirect:/livro/lista";
 	}
@@ -44,7 +50,7 @@ public class LivroController {
 	@GetMapping(value = "/livro/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		Livro livro = LivroRepository.excluir(id);
+		Livro livro = livroService.excluir(id);
 
 		msg = "Exclusão do livro " + livro.getTitulo() + " feito com sucesso!";
 

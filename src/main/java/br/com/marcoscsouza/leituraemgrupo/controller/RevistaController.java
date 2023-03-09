@@ -2,6 +2,8 @@ package br.com.marcoscsouza.leituraemgrupo.controller;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Revista;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.RevistaRepository;
+import br.com.marcoscsouza.leituraemgrupo.model.service.RevistaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class RevistaController {
 
 	private String msg;
+	@Autowired
+	private RevistaService revistaService;
 
 	@GetMapping(value = "/revista")
 	public String telaCadastro() {
@@ -21,7 +25,7 @@ public class RevistaController {
 	@GetMapping(value = "/revista/lista")
 	public String telaLista(Model model) {
 
-		model.addAttribute("revistas", RevistaRepository.obterLista());
+		model.addAttribute("revistas", revistaService.obterLista());
 
 		model.addAttribute("mensagem", msg);
 
@@ -36,7 +40,7 @@ public class RevistaController {
 
 		msg = "revista " + revista.getTitulo() + " criado com sucesso!";
 
-		RevistaRepository.incluir(revista);
+		revistaService.incluir(revista);
 
 		return "redirect:/revista/lista";
 	}
@@ -44,7 +48,7 @@ public class RevistaController {
 	@GetMapping(value = "/revista/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		Revista revista = RevistaRepository.excluir(id);
+		Revista revista = revistaService.excluir(id);
 
 		msg = "Exclusão do revista " + revista.getTitulo() + " feito com sucesso!";
 

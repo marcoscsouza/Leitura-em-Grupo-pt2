@@ -5,14 +5,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Grupo;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public class GrupoRepository {
 
 	private static Integer id = 1;
 	private static Map<Integer, Grupo> mapaGrupo = new HashMap<Integer, Grupo>();
 	
 	
-	public static boolean incluir(Grupo grupo) {
+	public boolean incluir(Grupo grupo) {
 
 		grupo.setId(id++);
 
@@ -26,11 +28,11 @@ public class GrupoRepository {
 
 	}
 
-	public static Grupo excluir(Integer key) {
+	public Grupo excluir(Integer key) {
 		return mapaGrupo.remove(key);
 	}
 
-	public static Collection<Grupo> obterLista() {
+	public Collection<Grupo> obterLista() {
 		return mapaGrupo.values();
 
 	}
