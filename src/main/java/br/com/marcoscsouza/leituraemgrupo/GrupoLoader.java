@@ -7,6 +7,10 @@ import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
 @Component
 public class GrupoLoader implements ApplicationRunner {
 
@@ -15,6 +19,34 @@ public class GrupoLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+
+        try {
+            String arq = "grupos.txt";
+            try {
+                FileReader arqLeitura = new FileReader(arq);
+                BufferedReader leitor = new BufferedReader(arqLeitura);
+
+                String linha = leitor.readLine();
+                String[] campos = null;
+
+                while (linha != null) {
+                    campos = linha.split(";");
+                    Grupo grupo = new Grupo(
+                            Integer.parseInt(campos[0]),
+                            campos[1],
+                            Boolean.parseBoolean(campos[2]));
+                    grupoService.incluir(grupo);
+                    linha = leitor.readLine();
+                }
+                leitor.close();
+                arqLeitura.close();
+
+            } catch (IOException e) {
+                System.out.println("Erro ao ler o arquivo: " + e.getMessage());
+            }
+        } finally {
+            System.out.println("Leitura do arquivo finalizada!");
+        }
 
         for (int i = 0; i < 10; i++) {
 
