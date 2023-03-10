@@ -1,0 +1,3 @@
+2019;Berserk Deluxe;353.50f;1;false;Kentaro Miura
+2017;Shingeki no kyojin;17.50f;16;true;Hajime Isayama
+2019;Spawn Compendium;52.50f;1;true;Todd McFarlane

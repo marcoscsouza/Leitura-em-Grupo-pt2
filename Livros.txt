@@ -1,0 +1,3 @@
+2017;Corvo e outros contos;42.79f;horror;Edgar Allan Poe;Traduzido
+2017;O chamado de Cthulhu e outros contos;17.79f;horror;H. P. Lovecraft;Traduzido
+2017;Head first! Java;149.90f;didático;Bert Bates;Não Traduzido

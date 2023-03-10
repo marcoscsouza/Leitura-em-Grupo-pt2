@@ -1,0 +1,3 @@
+Marcos Cassiano;1234;marcos@email.com;27;adm;avançado
+Marcio Cassiano;4321;marcio@email.com;27;cliente;avançado
+Marcelo Cassiano;123456;marcelo@email.com;22;cliente;medio
