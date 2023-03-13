@@ -1,16 +1,19 @@
 package br.com.marcoscsouza.leituraemgrupo;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Grupo;
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.service.GrupoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+@Order(2)
 @Component
 public class GrupoLoader implements ApplicationRunner {
 
@@ -31,10 +34,15 @@ public class GrupoLoader implements ApplicationRunner {
 
                 while (linha != null) {
                     campos = linha.split(";");
+
+                    Usuario usuario = new Usuario();
+                    usuario.setId(1);
+
                     Grupo grupo = new Grupo(
                             Integer.parseInt(campos[0]),
                             campos[1],
                             Boolean.parseBoolean(campos[2]));
+                    grupo.setUsuario(usuario);
                     grupoService.incluir(grupo);
                     linha = leitor.readLine();
                 }
@@ -48,16 +56,6 @@ public class GrupoLoader implements ApplicationRunner {
             System.out.println("Leitura do arquivo finalizada!");
         }
 
-        for (int i = 0; i < 10; i++) {
-
-            Grupo grupo = new Grupo(
-                    5,
-                    "Marcos Cassiano",
-                    true);
-
-            grupoService.incluir(grupo);
-            System.out.println("Cadastrado com sucesso!!" + grupo.toString());
-        }
     }
 
 }

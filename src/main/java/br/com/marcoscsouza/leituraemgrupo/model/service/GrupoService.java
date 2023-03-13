@@ -1,6 +1,7 @@
 package br.com.marcoscsouza.leituraemgrupo.model.service;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Grupo;
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.GrupoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,11 @@ public class GrupoService {
     public Collection<Grupo> obterLista() {
 //        return grupoRepository.obterLista();
         return (Collection<Grupo>) grupoRepository.findAll();
+    }
+
+    public Collection<Grupo> obterLista(Usuario usuario) {
+//        return grupoRepository.obterLista();
+        return grupoRepository.obterLista(usuario.getId());
     }
 
 }

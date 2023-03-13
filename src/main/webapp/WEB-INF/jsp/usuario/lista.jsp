@@ -39,6 +39,7 @@
 						<th>idade</th>
 						<th>Tipo preferido</th>
 						<th>nível de Leitura</th>
+						<th>grupos</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -52,6 +53,7 @@
 							<td>${u.idade}</td>
 							<td>${u.tipo}</td>
 							<td>${u.nivel}</td>
+							<td>${u.grupos.size()}</td>
 							<td><a href="/usuario/${u.id}/excluir">Excluir</a></td>
 						</tr>
 					</c:forEach>

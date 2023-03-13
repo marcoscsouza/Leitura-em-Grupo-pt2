@@ -1,5 +1,6 @@
 package br.com.marcoscsouza.leituraemgrupo.controller;
 
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.service.GrupoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Grupo;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.GrupoRepository;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 public class GrupoController {
@@ -25,9 +27,9 @@ public class GrupoController {
 	}
 
 	@GetMapping(value = "/grupo/lista")
-	public String telaLista(Model model) {
+	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
 		
-		model.addAttribute("grupos", grupoService.obterLista());
+		model.addAttribute("grupos", grupoService.obterLista(usuario));
 		
 		model.addAttribute("mensagem", msg);
 		msg = null;
@@ -36,9 +38,10 @@ public class GrupoController {
 	}
 
 	@PostMapping(value = "/grupo/incluir")
-	public String incluir(Grupo grupo) {
+	public String incluir(Grupo grupo, @SessionAttribute("usuario") Usuario usuario) {
 		System.out.println("Cadastrado com sucesso!!" + grupo.toString());
 
+		grupo.setUsuario(usuario);
 		msg = "grupo do " + grupo.getNomeResponsavel() + " criado com sucesso!";
 
 		grupoService.incluir(grupo);

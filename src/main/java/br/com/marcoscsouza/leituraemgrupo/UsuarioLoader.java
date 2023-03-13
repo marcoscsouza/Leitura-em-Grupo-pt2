@@ -5,12 +5,14 @@ import br.com.marcoscsouza.leituraemgrupo.model.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+@Order(1)
 @Component
 public class UsuarioLoader implements ApplicationRunner {
 
@@ -19,6 +21,17 @@ public class UsuarioLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+
+        Usuario userAdmin = new Usuario("Adm", "123456", "adm@email.com");
+        userAdmin.setNome("Administrador");
+        userAdmin.setIdade(60);
+        userAdmin.setTipo("Admin");
+        userAdmin.setNivel("Avançado");
+        usuarioService.incluir(userAdmin);
+
+        System.out.println("ADM cadastrado com sucesso!!" + userAdmin.toString());
+
+
 
         try{
             String arq = "usuarios.txt";
@@ -51,18 +64,5 @@ public class UsuarioLoader implements ApplicationRunner {
             System.out.println("Leitura do arquivo finalizada!");
         }
 
-        for (int i = 0; i < 10; i++) {
-
-
-            Usuario usuario = new Usuario("Adm", "123456", "adm@adm.com");
-            usuario.setNome("Administrador");
-            usuario.setIdade(30);
-            usuario.setTipo("Ficção");
-            usuario.setNivel("Avançado");
-
-            usuarioService.incluir(usuario);
-
-            System.out.println("Cadastrado com sucesso!!" + usuario.toString());
-        }
     }
 }

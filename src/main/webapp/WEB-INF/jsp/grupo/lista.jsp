@@ -39,6 +39,7 @@
 						<th>Integrantes</th>
 						<th>Reponsável</th>
 						<th>Estudo</th>
+						<th>Usuário</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -49,6 +50,7 @@
 							<td>${g.integrantes}</td>
 							<td>${g.nomeResponsavel}</td>
 							<td>${g.ehEstudo}</td>
+							<td>${g.usuario.nome}</td>
 							<td><a href="/grupo/${g.id}/excluir">Excluir</a></td>
 						</tr>
 					</c:forEach>

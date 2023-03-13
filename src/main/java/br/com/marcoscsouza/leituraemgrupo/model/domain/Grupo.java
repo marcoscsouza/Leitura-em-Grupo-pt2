@@ -16,6 +16,12 @@ public class Grupo {
 	private String nomeResponsavel;
 	private boolean ehEstudo;
 
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
+
+
+
 	public Grupo() {
 	}
 	
@@ -57,6 +63,14 @@ public class Grupo {
 
 	public void setEhEstudo(boolean ehEstudo) {
 		this.ehEstudo = ehEstudo;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	@Override

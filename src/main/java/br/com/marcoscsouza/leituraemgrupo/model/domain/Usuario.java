@@ -1,6 +1,7 @@
 package br.com.marcoscsouza.leituraemgrupo.model.domain;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "TUsuario")
@@ -16,6 +17,10 @@ public class Usuario {
 	private int idade;
 	private String tipo;
 	private String nivel;
+
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Grupo> grupos;
 
 	public Usuario() {
 	}
@@ -94,4 +99,12 @@ public class Usuario {
 		this.id = id;
 	}
 
+
+	public List<Grupo> getGrupos() {
+		return grupos;
+	}
+
+	public void setGrupos(List<Grupo> grupos) {
+		this.grupos = grupos;
+	}
 }
