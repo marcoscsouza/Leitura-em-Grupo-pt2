@@ -2,12 +2,22 @@ package br.com.marcoscsouza.leituraemgrupo.model.domain;
 
 import br.com.marcoscsouza.leituraemgrupo.auxiliar.Constante;
 
+import javax.persistence.*;
+
+
+@Entity
+@Table(name = "TGrupo")
 public class Grupo {
-	
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private int integrantes; 
 	private String nomeResponsavel;
 	private boolean ehEstudo;
+
+	public Grupo() {
+	}
 	
 	public Grupo(int integrantes, String nomeResponsavel, boolean ehEstudo) {
 		this.integrantes = integrantes;
@@ -35,6 +45,18 @@ public class Grupo {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public void setIntegrantes(int integrantes) {
+		this.integrantes = integrantes;
+	}
+
+	public void setNomeResponsavel(String nomeResponsavel) {
+		this.nomeResponsavel = nomeResponsavel;
+	}
+
+	public void setEhEstudo(boolean ehEstudo) {
+		this.ehEstudo = ehEstudo;
 	}
 
 	@Override

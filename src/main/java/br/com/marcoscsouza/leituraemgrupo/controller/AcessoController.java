@@ -2,6 +2,8 @@ package br.com.marcoscsouza.leituraemgrupo.controller;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.AcessoRepository;
+import br.com.marcoscsouza.leituraemgrupo.model.service.UsuarioService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +18,9 @@ import javax.servlet.http.HttpSession;
 @SessionAttributes("usuario")
 public class AcessoController {
 
+    @Autowired
+    private UsuarioService usuarioService;
+
     @GetMapping(value = "/login")
     public String telaLogin() {
         return "login";
@@ -26,7 +31,8 @@ public class AcessoController {
 
         Usuario user = new Usuario(email, senha);
 
-        user = AcessoRepository.autenticar(user);
+//        user = AcessoRepository.autenticar(user);
+        user = usuarioService.autenticar(user);
 
         if (user != null) {
 

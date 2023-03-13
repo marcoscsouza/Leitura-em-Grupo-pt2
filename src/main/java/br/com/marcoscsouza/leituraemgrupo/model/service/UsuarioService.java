@@ -9,19 +9,24 @@ import java.util.Collection;
 
 @Service
 public class UsuarioService {
+
+    public Usuario autenticar(Usuario usuario) {
+        return usuarioRepository.autenticacao(usuario.getEmail(), usuario.getSenha());
+//        return null;
+    }
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    public boolean incluir(Usuario usuario) {
-        return usuarioRepository.incluir(usuario);
+    public Usuario incluir(Usuario usuario) {
+        return usuarioRepository.save(usuario);
     }
 
-    public Usuario excluir(Integer key) {
-        return usuarioRepository.excluir(key);
+    public void excluir(Integer key) {
+        usuarioRepository.deleteById(key);
     }
 
     public Collection<Usuario> obterLista() {
-        return usuarioRepository.obterLista();
+        return (Collection<Usuario>) usuarioRepository.findAll();
     }
 
 }

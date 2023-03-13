@@ -13,16 +13,20 @@ public class GrupoService {
     @Autowired
     private GrupoRepository grupoRepository;
 
-    public boolean incluir(Grupo grupo) {
-        return grupoRepository.incluir(grupo);
+    public Grupo incluir(Grupo grupo) {
+//        return grupoRepository.incluir(grupo);
+
+        return grupoRepository.save(grupo);
     }
 
-    public Grupo excluir(Integer key) {
-        return grupoRepository.excluir(key);
+    public void excluir(Integer key) {
+//        return grupoRepository.excluir(key);
+        grupoRepository.deleteById(key);
     }
 
     public Collection<Grupo> obterLista() {
-        return grupoRepository.obterLista();
+//        return grupoRepository.obterLista();
+        return (Collection<Grupo>) grupoRepository.findAll();
     }
 
 }

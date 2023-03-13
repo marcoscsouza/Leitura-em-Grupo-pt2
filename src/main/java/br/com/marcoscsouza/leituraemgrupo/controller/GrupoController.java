@@ -49,9 +49,10 @@ public class GrupoController {
 	@GetMapping(value = "/grupo/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		Grupo grupo = grupoService.excluir(id);
+		grupoService.excluir(id);
 
-		msg = "Exclusão do grupo do " + grupo.getNomeResponsavel() + " feito com sucesso!";
+//		msg = "Exclusão do grupo do " + grupo.getNomeResponsavel() + " feito com sucesso!";
+		msg = "Exclusão do grupo feito com sucesso!";
 
 		return "redirect:/grupo/lista";
 	}

@@ -1,7 +1,13 @@
 package br.com.marcoscsouza.leituraemgrupo.model.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "TUsuario")
 public class Usuario {
 
+	 @Id
+	 @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 
 	private String nome;
