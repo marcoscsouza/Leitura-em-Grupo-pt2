@@ -1,7 +1,6 @@
 package br.com.marcoscsouza.leituraemgrupo.controller;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Quadrinho;
-import br.com.marcoscsouza.leituraemgrupo.model.repository.QuadrinhoRepository;
 import br.com.marcoscsouza.leituraemgrupo.model.service.QuadrinhoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

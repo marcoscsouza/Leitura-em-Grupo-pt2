@@ -26,7 +26,7 @@
 					<strong>Sucesso!</strong> ${mensagem}
 				</div>
 			</c:if>
-			<button type="submit">Novo</button>
+			<button class="btn btn-primary" type="submit">Cadastrar</button>
 		</form>
 
 		<c:if test="${empty grupos}">
@@ -55,7 +55,7 @@
 							<td>${g.nomeResponsavel}</td>
 							<td>${g.ehEstudo}</td>
 							<td>${g.usuario.nome}</td>
-							<td><a href="/grupo/${g.id}/excluir">Excluir</a></td>
+							<td> <button class="btn btn-danger" onclick="window.location.href='/grupo/${g.id}/excluir'"> Excluir </button></td>
 						</tr>
 					</c:forEach>
 					</c:if>

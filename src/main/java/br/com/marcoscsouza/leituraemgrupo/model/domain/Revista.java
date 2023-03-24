@@ -13,6 +13,9 @@ public class Revista extends Literatura {
 	private String instituto;
 	private String categoria;
 	private int edicao;
+
+	public Revista() {
+	}
 	
 	public Revista(int anoPublicado, String titulo, float valor, String instituto, String categoria, int edicao) {
 		super(anoPublicado, titulo, valor);

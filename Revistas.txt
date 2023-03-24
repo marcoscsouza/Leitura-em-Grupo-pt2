@@ -1,3 +1,7 @@
 2002;A imagem do 3º Reich;28.90f;globo;historia;285
 2021;PlayStation;19.90f;Europa;Jogos;285
 2021;Contigo: Big Brother Brasil 2018;99.90f;perfil;Atualidades;285
+1960;O Homem que Sabia Demais;19.90f;Europa;Filmes;285
+2003;tudo sobre o mundo;19.90f;globo;historia;285
+2008;O Mundo de Sofia;19.90f;globo;historia;285
+2022;ontem e hoje;19.90f;globo;Variedades;285

@@ -11,15 +11,13 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
-<title>Cadastro de revista</title>
+<title>Revistas</title>
 </head>
 <body>
-
 <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container">
 			<h3>Listagem de revista</h3>
-
             <form action="/revista" method="get">
                 <c:if test="${not empty mensagem}">
                     <div class="alert alert-success">
@@ -28,8 +26,6 @@
                 </c:if>
                 <button type="submit" class="btn btn-primary">Cadastrar</button>
             </form>
-
-
 		<c:if test="${empty revistas}">
 			<h5>Não existe revistas cadastrados!</h5>
 		</c:if>
@@ -60,15 +56,12 @@
 							<td>${r.categoria}</td>
 							<td>${r.anoPublicado}</td>
 							<td>${r.valor}</td>
-							<td><a href="/revista/${r.id}/excluir">Excluir</a></td>
+							<td> <button class="btn btn-danger" onclick="window.location.href='/revista/${r.id}/excluir'"> Excluir </button></td>
 						</tr>
 					</c:forEach>
 					</c:if>
-
-
 				</tbody>
 			</table>
 	</div>
-
 </body>
 </html>

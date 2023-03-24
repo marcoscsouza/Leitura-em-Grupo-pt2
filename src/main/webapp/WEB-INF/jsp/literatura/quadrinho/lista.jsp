@@ -11,7 +11,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
-<title>Cadastro de quadrinhos</title>
+<title>Quadrinhos</title>
 </head>
 <body>
 
@@ -61,15 +61,12 @@
 							<td>${q.volume}</td>
 							<td>${q.finalizado}</td>
 							<td>${q.valor}</td>
-							<td><a href="/quadrinho/${q.id}/excluir">Excluir</a></td>
+							<td> <button class="btn btn-danger" onclick="window.location.href='/quadrinho/${q.id}/excluir'"> Excluir </button></td>
 						</tr>
 					</c:forEach>
 					</c:if>
-
-
 				</tbody>
 			</table>
 	</div>
-
 </body>
 </html>

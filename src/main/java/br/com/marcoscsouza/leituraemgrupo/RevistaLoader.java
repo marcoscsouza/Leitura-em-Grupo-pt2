@@ -51,20 +51,5 @@ public class RevistaLoader implements ApplicationRunner {
         }finally {
             System.out.println("Leitura do arquivo finalizada!");
         }
-
-        for (int i = 0; i < 10; i++) {
-
-            Revista revista = new Revista(
-                    2023,
-                    "Revista do Zé",
-                    18.49F,
-                    "Veja",
-                    "Revista de variedades",
-                    32
-            );
-
-            revistaService.incluir(revista);
-            System.out.println("Cadastrado com sucesso!!" + revista.toString());
-        }
     }
 }

@@ -1,3 +1,10 @@
-2017;Corvo e outros contos;42.79f;horror;Edgar Allan Poe;Traduzido
-2017;O chamado de Cthulhu e outros contos;17.79f;horror;H. P. Lovecraft;Traduzido
-2017;Head first! Java;149.90f;didático;Bert Bates;Não Traduzido
+2017;Corvo e outros contos;42.79f;horror;Edgar Allan Poe;true
+2017;O chamado de Cthulhu e outros contos;17.79f;horror;H. P. Lovecraft;true
+2017;Head first! Java;149.90f;didático;Bert Bates;Não false
+1962;O homem que calculava;34.90f;Romance;Malba Tahan;true
+1962;Memórias de Adriano;55.49f;Romance;Marguerite Yourcenar;true
+1984;1984;34.90f;Romance;George Orwell;false
+1984;A revolução dos bichos;34.90f;Romance;George Orwell;true
+1910;A arte da guerra;34.90f;Didático;Sun Tzu;true
+2000;fragmentos de um discurso amoroso;34.90f;Romance;Roland Barthes;true
+1990;frankenstein;34.90f;Romance;Mary Shelley;false

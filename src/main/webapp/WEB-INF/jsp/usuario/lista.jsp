@@ -59,7 +59,7 @@
 							<td>${u.tipo}</td>
 							<td>${u.nivel}</td>
 							<td>${u.grupos.size()}</td>
-							<td><a href="/usuario/${u.id}/excluir">Excluir</a></td>
+							<td> <button class="btn btn-danger" onclick="window.location.href='/usuario/${u.id}/excluir'"> Excluir </button></td>
 						</tr>
 					</c:forEach>
 					</c:if>

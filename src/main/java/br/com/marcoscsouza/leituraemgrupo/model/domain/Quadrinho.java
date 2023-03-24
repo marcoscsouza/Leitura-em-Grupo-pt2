@@ -13,6 +13,9 @@ public class Quadrinho extends Literatura {
 	private int volume;
 	private boolean finalizado;
 	private String ilustrador;
+
+	public Quadrinho() {
+	}
 	
 	public Quadrinho(int anoPublicado, String titulo, float valor, int volume, boolean finalizado, String ilustrador) {
 		super(anoPublicado, titulo, valor);

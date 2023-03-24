@@ -1,3 +1,13 @@
 2019;Berserk Deluxe;353.50f;1;false;Kentaro Miura
 2017;Shingeki no kyojin;17.50f;16;true;Hajime Isayama
 2019;Spawn Compendium;52.50f;1;true;Todd McFarlane
+2019;The Walking Dead Deluxe;353.50f;1;false;Robert Kirkman
+2016;jojos bizarre adventure;17.50f;16;true;Hirohiko Araki
+2000;batman;17.50f;16;true;Frank Miller
+2010;One Piece;17.50f;16;true;Eiichiro Oda
+2001;Naruto;17.50f;16;true;Masashi Kishimoto
+1996;Dragon Ball;17.50f;16;true;Akira Toriyama
+2016;kimetu no yaiba;17.50f;16;true;Koyoharu Gotouge
+2018;jujutsu kaisen;17.50f;16;true;Gege Akutami
+2020;chainsaw man;17.50f;16;true;Tatsuki Fujimoto
+1970;cowboy bebop;17.50f;16;true;Yoshiyuki Tomino

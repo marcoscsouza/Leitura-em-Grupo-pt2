@@ -53,19 +53,5 @@ public class LivroLoader implements ApplicationRunner {
         }finally {
             System.out.println("Leitura do arquivo finalizada!");
         }
-
-        for (int i = 0; i < 10; i++) {
-
-            Livro livro = new Livro(
-                    1962,
-                    "Memórias de Adriano",
-                    55.49F,
-                    "Romance",
-                    "Marguerite Yourcenar",
-                    true);
-
-            livroService.incluir(livro);
-            System.out.println("Cadastrado com sucesso!!" + livro.toString());
-        }
     }
 }

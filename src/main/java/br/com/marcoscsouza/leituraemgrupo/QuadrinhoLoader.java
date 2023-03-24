@@ -51,20 +51,5 @@ public class QuadrinhoLoader implements ApplicationRunner {
             finally {
                 System.out.println("Leitura do arquivo finalizada!");
             }
-
-
-        for (int i = 0; i < 10; i++) {
-
-            Quadrinho quadrinho = new Quadrinho(
-                    1990,
-                    "Berserk",
-                    26.99F,
-                    3,
-                    false,
-                    "Kentarou Miura");
-
-            quadrinhoService.incluir(quadrinho);
-            System.out.println("Cadastrado com sucesso!!" + quadrinho.toString());
-        }
     }
 }
