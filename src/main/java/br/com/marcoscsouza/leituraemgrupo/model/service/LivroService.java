@@ -13,16 +13,20 @@ public class LivroService {
     @Autowired
     private LivroRepository livroRepository;
 
-    public boolean incluir(Livro livro) {
-        return livroRepository.incluir(livro);
+    public Livro incluir(Livro livro) {
+        return livroRepository.save(livro);
     }
 
-    public Livro excluir(Integer key) {
-        return livroRepository.excluir(key);
+    public void excluir(Integer key) {
+        livroRepository.deleteById(key);
     }
 
     public Collection<Livro> obterLista() {
-        return livroRepository.obterLista();
+        return (Collection<Livro>) livroRepository.findAll();
+    }
+
+    public Livro obterPorId(Integer usuarioId) {
+        return livroRepository.findById(usuarioId).orElse(null);
     }
 
 }

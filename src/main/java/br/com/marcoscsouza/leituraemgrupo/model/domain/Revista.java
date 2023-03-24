@@ -3,6 +3,11 @@ package br.com.marcoscsouza.leituraemgrupo.model.domain;
 import br.com.marcoscsouza.leituraemgrupo.auxiliar.Constante;
 import br.com.marcoscsouza.leituraemgrupo.exceptions.RevistaInvalidoExceptions;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbrevista")
 public class Revista extends Literatura {
 	
 	private String instituto;

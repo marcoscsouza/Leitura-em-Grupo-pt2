@@ -3,11 +3,19 @@ package br.com.marcoscsouza.leituraemgrupo.model.domain;
 import br.com.marcoscsouza.leituraemgrupo.auxiliar.Constante;
 import br.com.marcoscsouza.leituraemgrupo.exceptions.LivroInvalidoExceptions;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tblivro")
 public class Livro extends Literatura {
 	
 	private String genero;
 	private String autor;
 	private boolean traduzido;
+
+	public Livro() {
+	}
 
 	public Livro(int anoPublicado, String titulo, float valor, String genero, String autor, boolean traduzido) {
 		super(anoPublicado, titulo, valor);
@@ -80,7 +88,6 @@ public class Livro extends Literatura {
 		this.traduzido = traduzido;
 	}
 
-	
-	
+
 
 }

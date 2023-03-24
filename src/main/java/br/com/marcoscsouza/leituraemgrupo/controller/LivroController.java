@@ -50,9 +50,9 @@ public class LivroController {
 	@GetMapping(value = "/livro/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		Livro livro = livroService.excluir(id);
+		livroService.excluir(id);
 
-		msg = "Exclusão do livro " + livro.getTitulo() + " feito com sucesso!";
+		msg = "Exclusão do livro " + id + " feito com sucesso!";
 
 		return "redirect:/livro/lista";
 	}

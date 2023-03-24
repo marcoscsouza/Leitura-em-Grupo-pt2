@@ -4,13 +4,22 @@ import br.com.marcoscsouza.leituraemgrupo.exceptions.LivroInvalidoExceptions;
 import br.com.marcoscsouza.leituraemgrupo.exceptions.QuadrinhoInvalidoExceptions;
 import br.com.marcoscsouza.leituraemgrupo.exceptions.RevistaInvalidoExceptions;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tbliteratura")
+@Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Literatura {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private int anoPublicado;
 	private String titulo;
 	private float valor;
-	
+
+	public Literatura() {
+	}
 	public Literatura(int anoPublicado, String titulo, float valor) {
 		this.anoPublicado = anoPublicado;
 		this.titulo = titulo;
@@ -50,8 +59,18 @@ public abstract class Literatura {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
-	
-	
-	
+
+	public void setAnoPublicado(int anoPublicado) {
+		this.anoPublicado = anoPublicado;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public void setValor(float valor) {
+		this.valor = valor;
+	}
+
+
 }

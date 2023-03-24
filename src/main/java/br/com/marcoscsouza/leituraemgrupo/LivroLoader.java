@@ -5,12 +5,14 @@ import br.com.marcoscsouza.leituraemgrupo.model.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+@Order(3)
 @Component
 public class LivroLoader implements ApplicationRunner {
 

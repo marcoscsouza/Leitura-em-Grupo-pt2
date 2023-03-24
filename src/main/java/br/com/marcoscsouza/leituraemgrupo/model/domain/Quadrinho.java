@@ -3,6 +3,11 @@ package br.com.marcoscsouza.leituraemgrupo.model.domain;
 import br.com.marcoscsouza.leituraemgrupo.auxiliar.Constante;
 import br.com.marcoscsouza.leituraemgrupo.exceptions.QuadrinhoInvalidoExceptions;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "tbquadrinho")
 public class Quadrinho extends Literatura {
 	
 	private int volume;

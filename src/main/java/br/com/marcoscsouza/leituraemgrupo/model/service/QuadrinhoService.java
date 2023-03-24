@@ -13,15 +13,20 @@ public class QuadrinhoService {
     @Autowired
     private QuadrinhoRepository quadrinhoRepository;
 
-    public boolean incluir(Quadrinho quadrinho) {
-        return quadrinhoRepository.incluir(quadrinho);
+    public Quadrinho incluir(Quadrinho quadrinho) {
+        return quadrinhoRepository.save(quadrinho);
     }
 
-    public Quadrinho excluir(Integer key) {
-        return quadrinhoRepository.excluir(key);
+    public void excluir(Integer key) {
+        quadrinhoRepository.deleteById(key);
     }
 
     public Collection<Quadrinho> obterLista() {
-        return quadrinhoRepository.obterLista();
+        return (Collection<Quadrinho>) quadrinhoRepository.findAll();
     }
+
+    public Quadrinho obterPorId(Integer usuarioId){
+        return quadrinhoRepository.findById(usuarioId).orElse(null);
+    }
+
 }

@@ -49,9 +49,9 @@ public class QuadrinhoController {
 	@GetMapping(value = "/quadrinho/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		Quadrinho quadrinho = quadrinhoService.excluir(id);
+		quadrinhoService.excluir(id);
 
-		msg = "Exclusão do quadrinho " + quadrinho.getTitulo() + " feito com sucesso!";
+		msg = "Exclusão do quadrinho " + id + " feito com sucesso!";
 
 		return "redirect:/quadrinho/lista";
 	}

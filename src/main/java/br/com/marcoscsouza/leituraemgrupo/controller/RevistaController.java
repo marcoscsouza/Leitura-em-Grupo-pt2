@@ -48,9 +48,9 @@ public class RevistaController {
 	@GetMapping(value = "/revista/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
-		Revista revista = revistaService.excluir(id);
+		revistaService.excluir(id);
 
-		msg = "Exclusão do revista " + revista.getTitulo() + " feito com sucesso!";
+		msg = "Exclusão do revista " + id + " feito com sucesso!";
 
 		return "redirect:/revista/lista";
 	}

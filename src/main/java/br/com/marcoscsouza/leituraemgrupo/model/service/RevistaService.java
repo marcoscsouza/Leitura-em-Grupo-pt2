@@ -1,5 +1,6 @@
 package br.com.marcoscsouza.leituraemgrupo.model.service;
 
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Quadrinho;
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Revista;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.RevistaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +13,21 @@ public class RevistaService {
     @Autowired
     private RevistaRepository revistaRepository;
 
-    public boolean incluir(Revista revista) {
-        return revistaRepository.incluir(revista);
+    public Revista incluir(Revista revista) {
+        return revistaRepository.save(revista);
     }
 
-    public Revista excluir(Integer key) {
-        return revistaRepository.excluir(key);
+    public void excluir(Integer key) {
+        revistaRepository.deleteById(key);
     }
 
     public Collection<Revista> obterLista() {
-        return revistaRepository.obterLista();
+        return (Collection<Revista>) revistaRepository.findAll();
     }
+
+    public Revista obterPorId(Integer usuarioId){
+        return revistaRepository.findById(usuarioId).orElse(null);
+    }
+
 
 }
