@@ -5,7 +5,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+
 <title>Login</title>
+
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -33,11 +37,11 @@
             <h3 class="mb-4 text-center" id="signin_title">Já possui cadastro?</h3>
             <form action="/login" method="post" class="signin-form">
               <div class="form-group">
-                  <label>Email:</label>
+                  <label><i class="fi fi-rr-envelope"></i> Email:</label>
                     <input type="email" class="form-control" name="email" placeholder="User@email.com" value="adm@email.com">
               </div>
               <div class="form-group">
-                  <label>Senha:</label>
+                  <label for="senha"><i class="fi fi-rr-key"></i> Senha:</label>
                     <input type="password" class="form-control" name="senha" placeholder="Password" value="123456">
               </div>
               <div class="form-group">

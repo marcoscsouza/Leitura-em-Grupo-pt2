@@ -4,8 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script src="https://kit.fontawesome.com/3d4898b8f6.js" crossorigin="anonymous"></script>
-
+<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -17,7 +16,7 @@
 <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container">
-			<h3>Listagem de revista</h3>
+			<h3>Listagem de revistas</h3>
             <form action="/revista" method="get">
                 <c:if test="${not empty mensagem}">
                     <div class="alert alert-success">
