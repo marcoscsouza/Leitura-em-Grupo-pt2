@@ -85,7 +85,7 @@
                         </div>
                         <div>
                             <h4>Segurança</h4>
-                            <p>Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
+                            <p>Possuindo o que há de mais seguro no mercado de tecnologia, garantimos segurança total de suas informações.</p>
                             <a id="hyper-bt"  href="#">Learn More
                                 <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
@@ -101,7 +101,7 @@
                         </div>
                         <div>
                             <h4>Desemvolvimento</h4>
-                            <p>Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
+                            <p>Fazendo contato e conhecendo novas obras, você terá sempre o melhor desenvolvimento pessoal.</p>
                             <a id="hyper-bt"  href="#">Learn More 
                                 <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"></path>
@@ -116,19 +116,42 @@
 <!-- ================================================ CONTACT ======================================================== -->
 
         <section class="position-relative py-5">
-            <div class="d-md-none"><iframe allowfullscreen frameborder="0" src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%" height="100%"></iframe></div>
-            <div class="d-none d-md-block position-absolute top-0 start-0 w-100 h-100"><iframe allowfullscreen frameborder="0" src="https://cdn.bootstrapstudio.io/placeholders/map.html" width="100%" height="100%"></iframe></div>
+            <div class="d-md-none">
+                <iframe
+                   src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d386.8304730798775!2d-43.398294064769736!3d-22.72183238758815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1679869688035!5m2!1spt-BR!2sbr"
+                   width="600"
+                   height="450"
+                   style="border:0;"
+                   allowfullscreen=""
+                   loading="lazy"
+                   referrerpolicy="no-referrer-when-downgrade">
+               </iframe>
+           </div>
+
+            <div class="d-none d-md-block position-absolute top-0 start-0 w-100 h-100">
+
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d386.8304730798775!2d-43.398294064769736!3d-22.72183238758815!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1679869688035!5m2!1spt-BR!2sbr"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+
+            </div>
             <div class="position-relative mx-2 my-5 m-md-5">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-xl-5 col-xxl-4 offset-md-6 offset-xl-7 offset-xxl-8">
                             <div>
-                                <form class="border rounded shadow p-3 p-md-4 p-lg-5" method="post" style="background: var(--bs-body-bg);">
+                                <form class="border rounded shadow p-3 p-md-4 p-lg-5" action="/" method="get" style="background: var(--bs-body-bg);">
                                     <h3 class="text-center mb-3">Contact us</h3>
                                     <div class="mb-3"><input class="form-control" type="text" name="name" placeholder="Name" /></div>
                                     <div class="mb-3"><input class="form-control" type="email" name="email" placeholder="Email" /></div>
                                     <div class="mb-3"><textarea class="form-control" name="message" placeholder="Message" rows="6"></textarea></div>
-                                    <div class="mb-3"><button class="btn btn-primary" type="submit">Send </button></div>
+                                    <div class="mb-3"><button class="btn btn-primary" type="submit">Enviar </button></div>
                                 </form>
                             </div>
                         </div>

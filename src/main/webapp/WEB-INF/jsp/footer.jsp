@@ -4,9 +4,9 @@
 <footer class="text-center bg-dark" >
     <div class="container-fluid text-white py-4 py-lg-5">
         <ul class="list-inline">
-            <li class="list-inline-item me-4"><a class="link-light" href="#">Web design</a></li>
-            <li class="list-inline-item me-4"><a class="link-light" href="#">Development</a></li>
-            <li class="list-inline-item"><a class="link-light" href="#">Hosting</a></li>
+            <li class="list-inline-item me-4"><a class="link-light" href="#">DASHBOARD</a></li>
+            <li class="list-inline-item me-4"><a class="link-light" href="#">API</a></li>
+            <li class="list-inline-item"><a class="link-light" href="#">GITHUB</a></li>
         </ul>
         <ul class="list-inline">
             <li class="list-inline-item me-4"><svg class="bi bi-facebook text-light" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
