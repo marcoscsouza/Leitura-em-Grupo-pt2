@@ -21,13 +21,17 @@
 		<form action="revista/incluir" method="post">
 			<h3>cadastro de revistas</h3>
 
+			<c:import url="/WEB-INF/jsp/literatura/cadastro.jsp" />
+
 			<div class="form-group">
-                <label>Titulo:</label> <input type="text" class="form-control" name="titulo" value="Fofoca do BBB">
+
                 <label>Instituto:</label> <input type="text" class="form-control" name="instituto" value="Globo">
+
                 <label>Categora:</label> <input type="text" class="form-control" name="categoria" value="popular">
-                <label>Valor:</label> <input type="number" class="form-control" name="valor" value="18.56">
+
                 <label>Edição:</label> <input type="number" class="form-control" name="edicao" value="10">
-                <label>Data Lançamento:</label> <input type="number" class="form-control" name="anoPublicado" value="2004">
+
+
             </div>
 
 

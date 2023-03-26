@@ -11,62 +11,44 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <meta charset="ISO-8859-1">
-<title>Livros</title>
+<title>Literaturas</title>
 </head>
 <body>
 
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 
 	<div class="container">
-		<h3>Listagem de Livros</h3>
+		<h3>Listagem de Literaturas</h3>
 
-		<form action="/livro" method="get">
 		<c:if test="${not empty mensagem}">
 			<div class="alert alert-success">
 				<strong>Sucesso!</strong> ${mensagem}
 			</div>
 		</c:if>
-		<button type="submit" class="btn btn-primary" >Cadastrar</button>
-		</form>
 
-		<c:if test="${empty livros}">
-			<h5>Não existe livros cadastrados!</h5>
+		<c:if test="${empty literaturas}">
+			<h5>Não existe literaturas cadastradas!</h5>
 		</c:if>
 
-		<c:if test="${not empty livros}">
-			<h5>Quantidade de livros cadastrados: ${livros.size()}!</h5>
+		<c:if test="${not empty literaturas}">
+			<h5>Quantidade de literaturas cadastradas: ${literaturas.size()}!</h5>
 
 			<table class="table table-striped">
 				<thead>
 					<tr>
 						<th>ID</th>
 						<th>titulo</th>
-						<th>autor</th>
-						<th>ano publicação</th>
 						<th>valor</th>
-						<th>genero</th>
-						<th>traduzido</th>
 						<th></th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="l" items="${livros}">
+					<c:forEach var="l" items="${literaturas}">
 						<tr>
 							<td>${l.id}</td>
 							<td>${l.titulo}</td>
-							<td>${l.autor}</td>
-							<td>${l.anoPublicado}</td>
 							<td>${l.valor}</td>
-							<td>${l.genero}</td>
-							<td>
-							    <c:if test="${l.traduzido}">
-                                    <i class="fas fa-check"></i>
-                                </c:if>
-                                <c:if test="${not l.traduzido}">
-                                    <i class="fas fa-times"></i>
-                                </c:if>
-                            </td>
-							<td> <button class="btn btn-danger" onclick="window.location.href='/livro/${l.id}/excluir'"> Excluir </button></td>
+							<td> <button class="btn btn-danger" onclick="window.location.href='/literatura/${l.id}/excluir'"> Excluir </button></td>
 						</tr>
 					</c:forEach>
 					</c:if>

@@ -22,6 +22,10 @@ public class Usuario {
 	@JoinColumn(name = "idUsuario")
 	private List<Grupo> grupos;
 
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Literatura> literaturas;
+
 	public Usuario() {
 	}
 
@@ -106,5 +110,13 @@ public class Usuario {
 
 	public void setGrupos(List<Grupo> grupos) {
 		this.grupos = grupos;
+	}
+
+	public List<Literatura> getLiteraturas() {
+		return literaturas;
+	}
+
+	public void setLiteraturas(List<Literatura> literaturas) {
+		this.literaturas = literaturas;
 	}
 }

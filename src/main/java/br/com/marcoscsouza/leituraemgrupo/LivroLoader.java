@@ -1,6 +1,7 @@
 package br.com.marcoscsouza.leituraemgrupo;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Livro;
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -22,6 +23,9 @@ public class LivroLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+        Usuario admin = new Usuario();
+        admin.setId(1);
+
         try{
 
             String arq = "livros.txt";
@@ -41,6 +45,7 @@ public class LivroLoader implements ApplicationRunner {
                             campos[3],
                             campos[4],
                             Boolean.parseBoolean(campos[5]));
+                    livro.setUsuario(admin);
                     livroService.incluir(livro);
                     linha = leitor.readLine();
                 }

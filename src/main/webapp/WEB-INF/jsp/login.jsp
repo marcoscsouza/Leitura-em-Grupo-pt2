@@ -28,17 +28,17 @@
         <div class="col-md-6 col-lg-4" id="form">
           <div class="login-wrap p-0">
               <img class="img-fluid rounded mx-auto d-block" id="logo"
-              src="https://s3.us-west-2.amazonaws.com/secure.notion-static.com/5cd83245-2f1d-450d-ba97-9a1d9ea5a4da/books-stack-of-three.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230323%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230323T170652Z&X-Amz-Expires=86400&X-Amz-Signature=a65bfa3303ef6cc0accf59a3644a94e5f189ec1b64d8f3026b38ba32d6986c57&X-Amz-SignedHeaders=host&response-content-disposition=filename%3D%22books-stack-of-three.png%22&x-id=GetObject"
+              src="https://elasticbeanstalk-us-east-1-432335396377.s3.amazonaws.com/Logos/LeituraEmGrupo/books-stack-of-three.png"
               alt="Book Logo" width="72" height="57">
             <h3 class="mb-4 text-center" id="signin_title">Já possui cadastro?</h3>
             <form action="/login" method="post" class="signin-form">
               <div class="form-group">
                   <label>Email:</label>
-                    <input type="email" class="form-control" name="email" placeholder="User@email.com" value="marcos@email.com">
+                    <input type="email" class="form-control" name="email" placeholder="User@email.com" value="adm@email.com">
               </div>
               <div class="form-group">
                   <label>Senha:</label>
-                    <input type="password" class="form-control" name="senha" placeholder="Password" value="1234">
+                    <input type="password" class="form-control" name="senha" placeholder="Password" value="123456">
               </div>
               <div class="form-group">
                 <button type="submit" class="form-control btn btn-dark rounded submit px-3">Entrar</button>

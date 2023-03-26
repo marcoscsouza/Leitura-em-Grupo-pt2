@@ -17,6 +17,9 @@ public abstract class Literatura {
 	private int anoPublicado;
 	private String titulo;
 	private float valor;
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 
 	public Literatura() {
 	}
@@ -72,5 +75,11 @@ public abstract class Literatura {
 		this.valor = valor;
 	}
 
+	public Usuario getUsuario() {
+		return usuario;
+	}
 
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
 }

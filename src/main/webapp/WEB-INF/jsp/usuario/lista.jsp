@@ -41,10 +41,11 @@
 						<th>Nome</th>
 						<th>Senha</th>
 						<th>E-mail</th>
-						<th>idade</th>
+						<th>Idade</th>
 						<th>Tipo preferido</th>
-						<th>nível de Leitura</th>
-						<th>grupos</th>
+						<th>Nível de Leitura</th>
+						<th>Grupos</th>
+						<th>Literaturas</th>
 						<th></th>
 					</tr>
 				</thead>
@@ -59,6 +60,7 @@
 							<td>${u.tipo}</td>
 							<td>${u.nivel}</td>
 							<td>${u.grupos.size()}</td>
+							<td>${u.literaturas.size()}</td>
 							<td> <button class="btn btn-danger" onclick="window.location.href='/usuario/${u.id}/excluir'"> Excluir </button></td>
 						</tr>
 					</c:forEach>

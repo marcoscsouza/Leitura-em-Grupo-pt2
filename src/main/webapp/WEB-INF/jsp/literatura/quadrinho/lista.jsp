@@ -59,7 +59,14 @@
 							<td>${q.ilustrador}</td>
 							<td>${q.anoPublicado}</td>
 							<td>${q.volume}</td>
-							<td>${q.finalizado}</td>
+							<td>
+							    <c:if test="${q.finalizado}">
+                                    <i class="fas fa-check"></i>
+                                </c:if>
+                                <c:if test="${not q.finalizado}">
+                                   <i class="fas fa-times"></i>
+                                </c:if>
+                            </td>
 							<td>${q.valor}</td>
 							<td> <button class="btn btn-danger" onclick="window.location.href='/quadrinho/${q.id}/excluir'"> Excluir </button></td>
 						</tr>

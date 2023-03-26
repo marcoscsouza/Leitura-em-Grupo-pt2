@@ -22,14 +22,12 @@
 			<h3>Cadastro de livros</h3>
 
 			<div class="form-group">
-				<label>Titulo do livro: </label> <input type="text" class="form-control"
-					name="titulo" value="Contos de HP LoveCraft"> 
-				<label>Autor do livro: </label> <input type="text" class="form-control"
-				name="autor" value="H`Lovecraft"> 
-				<label>Ano de publicação:</label> <input type="number" class="form-control" 
-				name="anoPublicado" value="1940">
-				<label>Valor:</label> <input type="number" class="form-control" name="valor" 
-				value="26.99">
+			    <label>Autor do livro: </label> <input type="text" class="form-control"
+                name="autor" value="HP Lovecraft">
+
+	            <c:import url="/WEB-INF/jsp/literatura/cadastro.jsp" />
+
+
 				<label>Genero:</label> <input type="text" class="form-control" name="genero" 
 				value="Horror Cósmico">
 			</div>

@@ -54,8 +54,8 @@ public class GrupoController {
 
 		grupoService.excluir(id);
 
-//		msg = "Exclusão do grupo do " + grupo.getNomeResponsavel() + " feito com sucesso!";
-		msg = "Exclusão do grupo feito com sucesso!";
+		msg = "Exclusão do grupo do " + id + " feito com sucesso!";
+//		msg = "Exclusão do grupo feito com sucesso!";
 
 		return "redirect:/grupo/lista";
 	}

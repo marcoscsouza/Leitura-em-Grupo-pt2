@@ -22,6 +22,8 @@ public class GrupoLoader implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
+        Usuario admin = new Usuario();
+        admin.setId(1);
 
         try {
             String arq = "grupos.txt";
@@ -35,14 +37,13 @@ public class GrupoLoader implements ApplicationRunner {
                 while (linha != null) {
                     campos = linha.split(";");
 
-                    Usuario usuario = new Usuario();
-                    usuario.setId(1);
+
 
                     Grupo grupo = new Grupo(
                             Integer.parseInt(campos[0]),
                             campos[1],
                             Boolean.parseBoolean(campos[2]));
-                    grupo.setUsuario(usuario);
+                    grupo.setUsuario(admin);
                     grupoService.incluir(grupo);
                     linha = leitor.readLine();
                 }

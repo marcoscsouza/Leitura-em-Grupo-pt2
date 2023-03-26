@@ -1,5 +1,6 @@
 package br.com.marcoscsouza.leituraemgrupo.controller;
 
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.service.LivroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Livro;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.LivroRepository;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 public class LivroController {
@@ -26,9 +28,11 @@ public class LivroController {
 	}
 
 	@GetMapping(value = "/livro/lista")
-	public String telaLista(Model model) {
+	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
 
-		model.addAttribute("livros", livroService.obterLista());
+//		livro.setUsuario(usuario);
+
+		model.addAttribute("livros", livroService.obterLista(usuario));
 
 		model.addAttribute("mensagem", msg);
 		msg = null;
@@ -37,12 +41,14 @@ public class LivroController {
 	}
 
 	@PostMapping(value = "/livro/incluir")
-	public String incluir(Livro livro) {
-		System.out.println("Cadastrado com sucesso!!" + livro.toString());
+	public String incluir(Livro livro, @SessionAttribute("usuario") Usuario usuario) {
+
+		livro.setUsuario(usuario);
+
+		livroService.incluir(livro);
 
 		msg = "livro " + livro.getTitulo() + " criado com sucesso!";
 
-		livroService.incluir(livro);
 
 		return "redirect:/livro/lista";
 	}
@@ -50,9 +56,11 @@ public class LivroController {
 	@GetMapping(value = "/livro/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
 
+		Livro livro = livroService.obterPorId(id);
+
 		livroService.excluir(id);
 
-		msg = "Exclusão do livro " + id + " feito com sucesso!";
+		msg = "Exclusão do livro " + livro.getTitulo() + " feito com sucesso!";
 
 		return "redirect:/livro/lista";
 	}

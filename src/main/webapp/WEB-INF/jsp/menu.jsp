@@ -20,7 +20,7 @@
               <a class="nav-link" href="/grupo/lista">Grupo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Literatura</a>
+              <a class="nav-link" href="/literatura/lista">Literatura</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/livro/lista">Livro</a>

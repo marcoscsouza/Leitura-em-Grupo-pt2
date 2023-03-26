@@ -21,14 +21,14 @@
 		<form action="quadrinho/incluir" method="post">
 			<h3>Cadastro de quadrinhos</h3>
 
-
+            <c:import url="/WEB-INF/jsp/literatura/cadastro.jsp" />
 
 			<div class="form-group">
-				<label>Titulo:</label> <input type="text" class="form-control" name="titulo" value="Shingeki no Kyojin">
+
 				<label>Ilustrador:</label> <input type="text" class="form-control" name="ilustrador" value="Hydeo Kojima">
+
 			    <label>Volume:</label> <input type="number" class="form-control" name="volume" value="4">
-                <label>Valor:</label> <input type="number" class="form-control" name="valor" value="18.56">
-                <label>Data Lançamento:</label> <input type="number" class="form-control" name="anoPublicado" value="2004">
+
 			</div>
 
 			<div class="form-group">
