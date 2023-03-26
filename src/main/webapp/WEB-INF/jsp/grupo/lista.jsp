@@ -14,11 +14,12 @@
 <title>Cadastro de Grupo</title>
 </head>
 <body>
+<!-- Falta formartar para ficar igual as outras -->
 
 	<c:import url="/WEB-INF/jsp/menu.jsp" />
 
 	<div class="container">
-		<h3>Listagem de Grupos</h3>
+		<h3>Lista de Grupos</h3>
 
 		<form action="/grupo" method="get">
 			<c:if test="${not empty mensagem}">
@@ -36,13 +37,13 @@
 		<c:if test="${not empty grupos}">
 			<h5>Quantidade de grupos cadastrados: ${grupos.size()}!</h5>
 
-			<table class="table table-striped">
+			<table class="table table-dark table-borderless table-hover table-responsive">
 				<thead>
 					<tr>
 						<th>ID</th>
 						<th>Integrantes</th>
 						<th>Reponsável</th>
-						<th>Estudo</th>
+						<th>Grupo de estudo</th>
 						<th>Usuário</th>
 						<th></th>
 					</tr>

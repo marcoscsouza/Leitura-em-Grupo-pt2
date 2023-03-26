@@ -13,11 +13,13 @@
 <title>Quadrinhos</title>
 </head>
 <body>
+<!-- Falta formartar para ficar igual as outras -->
+
 
 <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container">
-			<h3>Listagem de quadrinhos</h3>
+			<h3>Lista de Quadrinhos</h3>
 
             <form action="/quadrinho" method="get">
 			<c:if test="${not empty mensagem}">
@@ -37,16 +39,16 @@
 		<c:if test="${not empty quadrinhos}">
 			<h5>Quantidade de quadrinhos cadastrados: ${quadrinhos.size()}!</h5>
 
-			<table class="table table-striped">
+			<table class="table table-dark table-borderless table-hover table-responsive">
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>titulo</th>
-						<th>ilustrador</th>
-						<th>ano publicação</th>
-						<th>volume</th>
-						<th>finalizado</th>
-						<th>valor</th>
+						<th>Titulo</th>
+						<th>Ilustrador</th>
+						<th>Ano da publicação</th>
+						<th>Volume</th>
+						<th>Finalizado</th>
+						<th>Valor</th>
 						<th></th>
 					</tr>
 				</thead>

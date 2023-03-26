@@ -13,10 +13,14 @@
 <title>Revistas</title>
 </head>
 <body>
+
+<!-- Falta formartar para ficar igual as outras -->
+
+
 <c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container">
-			<h3>Listagem de revistas</h3>
+			<h3>Lista de revistas</h3>
             <form action="/revista" method="get">
                 <c:if test="${not empty mensagem}">
                     <div class="alert alert-success">
@@ -32,16 +36,16 @@
 		<c:if test="${not empty revistas}">
 			<h5>Quantidade de revistas cadastrados: ${revistas.size()}!</h5>
 
-			<table class="table table-striped">
+			<table class="table table-dark table-borderless table-hover table-responsive">
 				<thead>
 					<tr>
 						<th>ID</th>
-						<th>titulo</th>
-						<th>instituto</th>
-						<th>edicao</th>
-						<th>categoria</th>
-						<th>ano publicação</th>
-						<th>valor</th>
+						<th>Titulo</th>
+						<th>Instituto</th>
+						<th>Edicao</th>
+						<th>Categoria</th>
+						<th>Ano publicação</th>
+						<th>Valor</th>
 						<th></th>
 					</tr>
 				</thead>

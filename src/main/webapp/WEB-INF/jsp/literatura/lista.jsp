@@ -15,45 +15,73 @@
 </head>
 <body>
 
-	<c:import url="/WEB-INF/jsp/menu.jsp" />
+	<div class="row">
+        <div class="col-md-12">
+            <c:import url="/WEB-INF/jsp/menu.jsp"/>
+        </div>
+    </div>
 
-	<div class="container">
-		<h3>Listagem de Literaturas</h3>
+	<div class="container-fluid" style="padding-top: 100px;">
+        <div class="row">
+            <div class="col-md-12">
+		        <h1 class="text-center">Lista de Literaturas</h1>
+            </div>
 
-		<c:if test="${not empty mensagem}">
-			<div class="alert alert-success">
-				<strong>Sucesso!</strong> ${mensagem}
-			</div>
-		</c:if>
+            <c:if test="${not empty mensagem}">
+                <div class="col-md-6">
+                    <div class="alert alert-success">
+                        <strong>Sucesso!</strong> ${mensagem}
+                    </div>
+                </div>
+            </c:if>
+        </div>
 
-		<c:if test="${empty literaturas}">
-			<h5>Não existe literaturas cadastradas!</h5>
-		</c:if>
+        <div class="row">
+            <div class="col-md-12">
+                <c:if test="${empty literaturas}">
+                    <h5>Não existe literaturas cadastradas!</h5>
+                </c:if>
+            </div>
+        </div>
 
-		<c:if test="${not empty literaturas}">
-			<h5>Quantidade de literaturas cadastradas: ${literaturas.size()}!</h5>
+        <div class="row" style="padding-top: 50px;">
+            <div class="col-md-12">
+                <c:if test="${not empty literaturas}">
+                    <h5>Quantidade de literaturas cadastradas: ${literaturas.size()}!</h5>
 
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>ID</th>
-						<th>titulo</th>
-						<th>valor</th>
-						<th></th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="l" items="${literaturas}">
-						<tr>
-							<td>${l.id}</td>
-							<td>${l.titulo}</td>
-							<td>${l.valor}</td>
-							<td> <button class="btn btn-danger" onclick="window.location.href='/literatura/${l.id}/excluir'"> Excluir </button></td>
-						</tr>
-					</c:forEach>
-					</c:if>
-				</tbody>
-			</table>
-	</div>
+                    <table class="table table-dark table-borderless table-hover table-responsive">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Titulo</th>
+                                <th>Valor</th>
+                                <th>Ano da Publicação</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <c:forEach var="l" items="${literaturas}">
+                                <tr>
+                                    <td>${l.id}</td>
+                                    <td>${l.titulo}</td>
+                                    <td class="preco">${l.valor}</td>
+                                    <td>${l.anoPublicado}</td>
+                                    <td> <button class="btn btn-danger" onclick="window.location.href='/literatura/${l.id}/excluir'"> Excluir </button></td>
+                                </tr>
+                            </c:forEach>
+
+                        </tbody>
+                    </table>
+                </c:if>
+	        </div>
+        </div>
+    </div>
+
+    <script>
+        const precos = document.querySelectorAll('.preco');
+        precos.forEach((preco) => {
+          preco.textContent ="R$: " + parseFloat(preco.textContent).toFixed(2);
+        });
+    </script>
 </body>
 </html>
