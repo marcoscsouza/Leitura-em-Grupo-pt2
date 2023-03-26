@@ -15,8 +15,6 @@
 
         <c:if test="${not empty usuario}">
 
-
-
             <li class="nav-item">
               <a class="nav-link" href="/usuario/lista"><i class="fi fi-rr-user"></i> Usuário</a>
             </li>
@@ -43,8 +41,6 @@
 
       <ul class="nav navbar-nav navbar-right">
         <c:if test="${empty usuario}">
-
-
 
             <li class="nav-item">
                 <a class="nav-link" aria-current="page" href="/usuario"><i class="fi fi-rr-user-add"></i> Sign Up</a>

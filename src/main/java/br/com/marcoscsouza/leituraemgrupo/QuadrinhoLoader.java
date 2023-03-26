@@ -1,6 +1,7 @@
 package br.com.marcoscsouza.leituraemgrupo;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Quadrinho;
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.service.QuadrinhoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -20,6 +21,9 @@ public class QuadrinhoLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+        Usuario admin = new Usuario();
+        admin.setId(1);
+
         try {
             String arq = "quadrinhos.txt";
             try {
@@ -38,6 +42,7 @@ public class QuadrinhoLoader implements ApplicationRunner {
                             Integer.parseInt(campos[3]),
                             Boolean.parseBoolean(campos[4]),
                             campos[5]);
+                    quadrinho.setUsuario(admin);
                     quadrinhoService.incluir(quadrinho);
                     linha = leitor.readLine();
                 }

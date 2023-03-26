@@ -1,6 +1,7 @@
 package br.com.marcoscsouza.leituraemgrupo;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Revista;
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.service.RevistaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -20,6 +21,9 @@ public class RevistaLoader implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
 
+        Usuario admin = new Usuario();
+        admin.setId(1);
+
         try{
             String arq = "revistas.txt";
             try{
@@ -38,6 +42,7 @@ public class RevistaLoader implements ApplicationRunner {
                             campos[3],
                             campos[4],
                             Integer.parseInt(campos[5]));
+                    revista.setUsuario(admin);
                     revistaService.incluir(revista);
                     linha = leitor.readLine();
                 }

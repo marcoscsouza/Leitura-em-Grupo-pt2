@@ -1,6 +1,7 @@
 package br.com.marcoscsouza.leituraemgrupo.model.service;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Quadrinho;
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.QuadrinhoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,6 +24,10 @@ public class QuadrinhoService {
 
     public Collection<Quadrinho> obterLista() {
         return (Collection<Quadrinho>) quadrinhoRepository.findAll();
+    }
+
+    public Collection<Quadrinho> obterLista(Usuario usuario){
+        return (Collection<Quadrinho>) quadrinhoRepository.obterLista(usuario.getId());
     }
 
     public Quadrinho obterPorId(Integer usuarioId){
