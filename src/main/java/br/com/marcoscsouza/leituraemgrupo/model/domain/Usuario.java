@@ -26,6 +26,11 @@ public class Usuario {
 	@JoinColumn(name = "idUsuario")
 	private List<Literatura> literaturas;
 
+	@OneToMany
+	@JoinColumn(name = "idUsuario")
+	private List<Leitura> leituras;
+
+
 	public Usuario() {
 	}
 
@@ -119,4 +124,14 @@ public class Usuario {
 	public void setLiteraturas(List<Literatura> literaturas) {
 		this.literaturas = literaturas;
 	}
+
+	public List<Leitura> getLeituras() {
+		return leituras;
+	}
+
+	public void setLeituras(List<Leitura> leituras) {
+		this.leituras = leituras;
+	}
+
+
 }

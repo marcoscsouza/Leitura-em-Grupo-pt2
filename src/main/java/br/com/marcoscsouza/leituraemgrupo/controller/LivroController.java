@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Livro;
-import br.com.marcoscsouza.leituraemgrupo.model.repository.LivroRepository;
 import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller

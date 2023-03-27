@@ -34,7 +34,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fi fi-rr-book-user"></i> Leitura</a>
+              <a class="nav-link" href="/leitura/lista"><i class="fi fi-rr-book-user"></i> Leitura</a>
             </li>
         </c:if>
       </ul>

@@ -5,12 +5,7 @@ import java.util.List;
 
 import br.com.marcoscsouza.leituraemgrupo.exceptions.GrupoInvalidoException;
 import br.com.marcoscsouza.leituraemgrupo.exceptions.LiteraturaInvalidoException;
-import br.com.marcoscsouza.leituraemgrupo.model.domain.Grupo;
-import br.com.marcoscsouza.leituraemgrupo.model.domain.Leitura;
-import br.com.marcoscsouza.leituraemgrupo.model.domain.Literatura;
-import br.com.marcoscsouza.leituraemgrupo.model.domain.Livro;
-import br.com.marcoscsouza.leituraemgrupo.model.domain.Quadrinho;
-import br.com.marcoscsouza.leituraemgrupo.model.domain.Revista;
+import br.com.marcoscsouza.leituraemgrupo.model.domain.*;
 
 public class LeituraTest {
 

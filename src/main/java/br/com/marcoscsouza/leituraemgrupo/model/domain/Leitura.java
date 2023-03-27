@@ -7,18 +7,35 @@ import java.util.List;
 import br.com.marcoscsouza.leituraemgrupo.exceptions.GrupoInvalidoException;
 import br.com.marcoscsouza.leituraemgrupo.exceptions.LiteraturaInvalidoException;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tbLeitura")
 public class Leitura {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
 	private LocalDateTime dataRegistro;
 	private String detalhes;
 	private boolean Presencial;
 
+	@OneToOne(cascade = CascadeType.DETACH)
+	@JoinColumn(name = "idGrupo")
 	private Grupo grupo;
+	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Literatura> literaturas;
+
+	@ManyToOne
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
+
+	public Leitura() {
+	}
 
 	public Leitura(Grupo grupo, List<Literatura> literaturas)
 			throws GrupoInvalidoException, LiteraturaInvalidoException {
-
+		this();
 		if (grupo == null) {
 			throw new GrupoInvalidoException("Nenhum grupo associado a leitura!");
 		}
@@ -99,5 +116,30 @@ public class Leitura {
 	public List<Literatura> getLiteraturas() {
 		return literaturas;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setGrupo(Grupo grupo) {
+		this.grupo = grupo;
+	}
+
+	public void setLiteraturas(List<Literatura> literaturas) {
+		this.literaturas = literaturas;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
+	}
+
 
 }

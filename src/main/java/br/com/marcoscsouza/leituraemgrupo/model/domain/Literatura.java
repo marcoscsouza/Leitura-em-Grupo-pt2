@@ -5,6 +5,7 @@ import br.com.marcoscsouza.leituraemgrupo.exceptions.QuadrinhoInvalidoExceptions
 import br.com.marcoscsouza.leituraemgrupo.exceptions.RevistaInvalidoExceptions;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tbliteratura")
@@ -20,6 +21,9 @@ public abstract class Literatura {
 	@ManyToOne
 	@JoinColumn(name = "idUsuario")
 	private Usuario usuario;
+
+	@ManyToMany(mappedBy = "literaturas")
+	private List<Leitura> leituras;
 
 	public Literatura() {
 	}
@@ -82,4 +86,14 @@ public abstract class Literatura {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
+
+	public List<Leitura> getLeituras() {
+		return leituras;
+	}
+
+	public void setLeituras(List<Leitura> leituras) {
+		this.leituras = leituras;
+	}
+
+
 }
