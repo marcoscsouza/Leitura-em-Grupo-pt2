@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <c:if test="${empty livros}">
-                            <h5>N�o existe livros cadastrados!</h5>
+                            <h5>Não existe livros cadastrados!</h5>
                         </c:if>
                     </div>
                 </div>
@@ -62,10 +62,10 @@
                                         <th>ID</th>
                                         <th>Titulo</th>
                                         <th>Autor</th>
-                                        <th>Ano da publica��o</th>
+                                        <th>Ano da publicação</th>
                                         <th>Valor</th>
-                                        <th>G�nero</th>
-                                        <th>Possui Tradu��o</th>
+                                        <th>Gênero Literario</th>
+                                        <th>Possui Tradução</th>
                                         <th></th>
                                     </tr>
                                 </thead>

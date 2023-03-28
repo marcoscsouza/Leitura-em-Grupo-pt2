@@ -13,7 +13,7 @@
                 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
                 crossorigin="anonymous"></script>
             <meta charset="ISO-8859-1">
-            <title>Cadastro de Usu�rio</title>
+            <title>Cadastro de Usuário</title>
         </head>
 
         <body>
@@ -34,7 +34,7 @@
                         <label>Categora:</label> <input type="text" class="form-control" name="categoria"
                             value="popular">
 
-                        <label>Edi��o:</label> <input type="number" class="form-control" name="edicao" value="10">
+                        <label>Edição:</label> <input type="number" class="form-control" name="edicao" value="10">
 
 
                     </div>
@@ -44,7 +44,7 @@
                         <label>Finalizado:</label>
                         <select class="form-control" name="finalizado">
                             <option value="true" select>Sim</option>
-                            <option value="false">N�o</option>
+                            <option value="false">Não</option>
                         </select>
                     </div>
 

@@ -61,7 +61,7 @@
             <!-- ============================================= FEATURES =========================================================== -->
 
             <div class="container py-4 py-xl-5 shadow-sm p-3">
-                <h1>Caracter�sticas</h1>
+                <h1>Características</h1>
                 <div class="row row-cols-1 row-cols-md-2 ">
                     <div class="col ">
                         <img class="rounded w-100 h-100 fit-cover shadow p-3"
@@ -81,7 +81,7 @@
                             </div>
                             <div>
                                 <h4>Compartilhamento</h4>
-                                <p>Compartilhe suas experi�ncias e gostos com toda a comunidade.</p>
+                                <p>Compartilhe suas experiências e gostos com toda a comunidade.</p>
                                 <a id="hyper-bt" href="#">Learn More
                                     <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="1em"
                                         height="1em" fill="currentColor" viewBox="0 0 16 16">
@@ -102,9 +102,9 @@
                                 </svg>
                             </div>
                             <div>
-                                <h4>Seguran�a</h4>
-                                <p>Possuindo o que h� de mais seguro no mercado de tecnologia, garantimos seguran�a
-                                    total de suas informa��es.</p>
+                                <h4>Segurança</h4>
+                                <p>Possuindo o que há de mais seguro no mercado de tecnologia, garantimos segurança
+                                    total de suas informações.</p>
                                 <a id="hyper-bt" href="#">Learn More
                                     <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="1em"
                                         height="1em" fill="currentColor" viewBox="0 0 16 16">
@@ -126,9 +126,9 @@
                             </div>
                             <div>
                                 <h4>Desemvolvimento</h4>
-                                <p>Fazendo contato e conhecendo novas obras, voc� ter� sempre o melhor desenvolvimento
+                                <p>Fazendo contato e conhecendo novas obras, você terá sempre o melhor desenvolvimento
                                     pessoal.</p>
-                                <a id="hyper-bt" href="#">Learn More�
+                                <a id="hyper-bt" href="#">Learn More
                                     <svg class="bi bi-arrow-right" xmlns="http://www.w3.org/2000/svg" width="1em"
                                         height="1em" fill="currentColor" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"

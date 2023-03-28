@@ -36,7 +36,7 @@
 
 
 				<c:if test="${empty quadrinhos}">
-					<h5>N�o existe quadrinhos cadastrados!</h5>
+					<h5>Não existe quadrinhos cadastrados!</h5>
 				</c:if>
 
 				<c:if test="${not empty quadrinhos}">
@@ -48,7 +48,7 @@
 								<th>ID</th>
 								<th>Titulo</th>
 								<th>Ilustrador</th>
-								<th>Ano da publica��o</th>
+								<th>Ano da publicação</th>
 								<th>Volume</th>
 								<th>Finalizado</th>
 								<th>Valor</th>

@@ -38,7 +38,7 @@
 					<div class="form-group">
 						<label>Grupo presencial:</label> <select name="presencial" class="form-control">
 							<option value="true" selected>SIM</option>
-							<option value="false">N�O</option>
+							<option value="false">NÃO</option>
 						</select>
 					</div>
 

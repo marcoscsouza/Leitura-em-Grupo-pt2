@@ -43,7 +43,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <c:if test="${empty literaturas}">
-                            <h5>N�o existe literaturas cadastradas!</h5>
+                            <h5>Não existe literaturas cadastradas!</h5>
                         </c:if>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                                         <th>ID</th>
                                         <th>Titulo</th>
                                         <th>Valor</th>
-                                        <th>Ano da Publica��o</th>
+                                        <th>Ano da Publicação</th>
                                         <th></th>
                                     </tr>
                                 </thead>

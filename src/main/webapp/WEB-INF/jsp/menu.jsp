@@ -19,7 +19,7 @@
             <c:if test="${not empty usuario}">
 
               <li class="nav-item">
-                <a class="nav-link" href="/usuario/lista"><i class="fi fi-rr-user"></i> Usu�rio</a>
+                <a class="nav-link" href="/usuario/lista"><i class="fi fi-rr-user"></i> Usuário</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/grupo/lista"><i class="fi fi-rr-users-alt"></i> Grupo</a>

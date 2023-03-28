@@ -34,7 +34,7 @@
 				</form>
 
 				<c:if test="${empty grupos}">
-					<h5>N�o existe grupos cadastrados!</h5>
+					<h5>Não existe grupos cadastrados!</h5>
 				</c:if>
 
 				<c:if test="${not empty grupos}">
@@ -45,9 +45,9 @@
 							<tr>
 								<th>ID</th>
 								<th>Integrantes</th>
-								<th>Repons�vel</th>
+								<th>Reponsável</th>
 								<th>Grupo de estudo</th>
-								<th>Usu�rio</th>
+								<th>Usuário</th>
 								<th></th>
 							</tr>
 						</thead>

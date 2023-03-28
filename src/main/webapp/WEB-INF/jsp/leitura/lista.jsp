@@ -47,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <c:if test="${empty leituras}">
-                            <h5>N�o existe leituras cadastradas!</h5>
+                            <h5>Não existe leituras cadastradas!</h5>
                         </c:if>
                     </div>
                 </div>

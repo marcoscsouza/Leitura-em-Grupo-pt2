@@ -25,7 +25,7 @@
 					<h3>Cadastrar novo grupo</h3>
 
 					<div class="form-group">
-						<label>Nome Respons�vel:</label> <input type="text" class="form-control" name="nomeResponsavel"
+						<label>Nome Responsável:</label> <input type="text" class="form-control" name="nomeResponsavel"
 							value="Marcos Cassiano"> <label>Numero
 							de integrantes:</label> <input type="number" class="form-control" name="integrantes" value="25">
 					</div>
@@ -33,7 +33,7 @@
 					<div class="form-group">
 						<label>Grupo de estudos? </label> <select name="ehEstudo" class="form-control">
 							<option value="true">SIM</option>
-							<option value="false">N�O</option>
+							<option value="false">NÃO</option>
 						</select>
 					</div>
 

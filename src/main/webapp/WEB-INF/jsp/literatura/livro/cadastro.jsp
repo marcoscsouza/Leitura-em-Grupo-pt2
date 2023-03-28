@@ -30,15 +30,15 @@
 						<c:import url="/WEB-INF/jsp/literatura/cadastro.jsp" />
 
 
-						<label>Genero:</label> <input type="text" class="form-control" name="genero" value="Horror C�smico">
+						<label>Genero:</label> <input type="text" class="form-control" name="genero" value="Horror Cósmico">
 					</div>
 
 
 
 					<div class="form-group">
-						<label>Traduzido para portugu�s:</label> <select name="traduzido" class="form-control">
+						<label>Traduzido para português:</label> <select name="traduzido" class="form-control">
 							<option value="true" selected>SIM</option>
-							<option value="false">N�O</option>
+							<option value="false">NÃO</option>
 						</select>
 					</div>
 

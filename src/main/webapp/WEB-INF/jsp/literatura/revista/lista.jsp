@@ -33,7 +33,7 @@
 					<button type="submit" class="btn btn-primary">Cadastrar</button>
 				</form>
 				<c:if test="${empty revistas}">
-					<h5>N�o existe revistas cadastrados!</h5>
+					<h5>Não existe revistas cadastrados!</h5>
 				</c:if>
 
 				<c:if test="${not empty revistas}">
@@ -47,7 +47,7 @@
 								<th>Instituto</th>
 								<th>Edicao</th>
 								<th>Categoria</th>
-								<th>Ano publica��o</th>
+								<th>Ano publicação</th>
 								<th>Valor</th>
 								<th></th>
 							</tr>

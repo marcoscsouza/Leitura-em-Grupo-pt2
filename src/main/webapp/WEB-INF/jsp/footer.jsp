@@ -31,6 +31,6 @@
                             </path>
                         </svg></li>
                 </ul>
-                <p class="text-muted mb-0">Copyright � 2023 Marcoscsouza</p>
+                <p class="text-muted mb-0">Copyright  2023 Marcoscsouza</p>
             </div>
         </footer>

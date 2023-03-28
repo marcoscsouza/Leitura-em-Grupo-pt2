@@ -39,7 +39,7 @@
               <img class="img-fluid rounded mx-auto d-block" id="logo"
                 src="https://elasticbeanstalk-us-east-1-432335396377.s3.amazonaws.com/Logos/LeituraEmGrupo/books-stack-of-three.png"
                 alt="Book Logo" width="72" height="57">
-              <h3 class="mb-4 text-center" id="signin_title">J� possui cadastro?</h3>
+              <h3 class="mb-4 text-center" id="signin_title">Já possui cadastro?</h3>
               <form action="/login" method="post" class="signin-form">
                 <div class="form-group">
                   <label><i class="fi fi-rr-envelope"></i> Email:</label>
