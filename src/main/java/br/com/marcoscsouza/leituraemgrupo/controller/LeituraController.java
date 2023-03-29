@@ -2,7 +2,9 @@ package br.com.marcoscsouza.leituraemgrupo.controller;
 
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Leitura;
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
+import br.com.marcoscsouza.leituraemgrupo.model.service.GrupoService;
 import br.com.marcoscsouza.leituraemgrupo.model.service.LeituraService;
+import br.com.marcoscsouza.leituraemgrupo.model.service.LiteraturaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,9 +21,20 @@ public class LeituraController {
 	@Autowired
 	private LeituraService leituraService;
 
+	@Autowired
+	private GrupoService grupoService;
+
+	@Autowired
+	private LiteraturaService literaturaService;
 
 	@GetMapping(value = "/leitura")
-	public String telaCadastro() {
+	public String telaCadastro(Model model, @SessionAttribute("usuario") Usuario usuario) {
+
+		model.addAttribute("grupos", grupoService.obterLista(usuario));
+
+		model.addAttribute("literaturas", literaturaService.obterLista(usuario));
+
+
 		return "leitura/cadastro";
 	}
 
@@ -42,6 +55,9 @@ public class LeituraController {
 		leitura.setUsuario(usuario);
 
 		leituraService.incluir(leitura);
+
+		System.out.println("grupo: " + leitura.getGrupo().getId());
+		System.out.println("Literaturas: " + leitura.getLiteraturas());
 
 		msg = "livro " + leitura.getDetalhes() + " criado com sucesso!";
 

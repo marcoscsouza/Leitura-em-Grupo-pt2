@@ -1,5 +1,6 @@
 package br.com.marcoscsouza.leituraemgrupo.controller;
 
+import br.com.marcoscsouza.leituraemgrupo.model.domain.Endereco;
 import br.com.marcoscsouza.leituraemgrupo.model.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -41,7 +42,13 @@ public class UsuarioController {
 	}
 
 	@PostMapping(value = "/usuario/incluir")
-	public String incluir(Usuario usuario) {
+	public String incluir(Usuario usuario, Endereco endereco){
+
+		usuario.setEndereco(endereco);
+
+		System.out.println("bairro: " + usuario.getEndereco().getBairro());
+
+
 		System.out.println("Cadastrado com sucesso!!" + usuario.toString());
 
 		msg = "usuario " + usuario.getNome() + " criado com sucesso!";

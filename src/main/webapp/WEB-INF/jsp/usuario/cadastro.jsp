@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 		<!DOCTYPE html>
 		<html>
@@ -12,7 +12,7 @@
 				integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
 				crossorigin="anonymous"></script>
 			<link rel="stylesheet" href="css/login.css" type="text/css">
-			<meta charset="ISO-8859-1">
+			<meta charset="utf-8">
 			<title>Sign Up</title>
 		</head>
 
@@ -20,16 +20,28 @@
 
 			<c:import url="/WEB-INF/jsp/menu.jsp" />
 
-			<div class="d-flex justify-content-center align-items-center vh-100 bg-black">
-				<div class="col-md-6 col-lg-4" id="form">
-					<div class="login-wrap p-0">
+			<div class="container bg-black">
 
-						<img class="img-fluid rounded mx-auto d-block" id="logo"
-							src="https://elasticbeanstalk-us-east-1-432335396377.s3.amazonaws.com/Logos/LeituraEmGrupo/books-stack-of-three.png"
-							alt="Book Logo" width="72" height="57">
+
+				<form action="usuario/incluir" method="post" class="">
+					<div class="row" id="form">
+						<div class="text-center">
+							<img class="mb-4 text-center img-logo" id="logo"
+								src="https://elasticbeanstalk-us-east-1-432335396377.s3.amazonaws.com/Logos/LeituraEmGrupo/books-stack-of-three.png"
+								alt="Book Logo" width="72" height="57" />
+						</div>
 
 						<h3 class="mb-4 text-center" id="signin_title">Crie sua conta</h3>
-						<form action="usuario/incluir" method="post" class="signin-form">
+
+						<div class="col-4">
+							<div class="mb-3">
+								<label for="formFile" class="form-label">Selecione sua foto</label>
+								<input class="form-control" type="file" id="formFile" />
+							</div>
+							<button type="submit" class="btn btn-dark disabled">Enviar</button>
+						</div>
+
+						<div class="col-4">
 							<div class="form-group">
 								<label>Nome:</label> <input type="text" class="form-control" name="nome" value="Marcos Cassiano">
 								<label>Idade:</label>
@@ -63,20 +75,24 @@
 							</div>
 
 							<div class="form-group">
-								<label>N�vel de Leitura:</label> <select name="nivel" class="form-control">
+								<label>Nível de Leitura:</label> <select name="nivel" class="form-control">
 									<option value="iniciante">Iniciante</option>
-									<option value="intermedi�rio">Intermedi�rio</option>
-									<option value="avan�ado" selected>Avan�ado</option>
+									<option value="intermediário">Intermediário</option>
+									<option value="avançado" selected>Avançado</option>
 								</select>
 							</div>
+						</div>
+						<div class="col-4">
 
-							<div class="form-group">
-								<button type="submit" class="form-control btn btn-dark rounded submit px-3">Criar minha conta
-									gr�tis</button>
-							</div>
-						</form>
+							<c:import url="/WEB-INF/jsp/endereco/cadastro.jsp" />
+						</div>
+						<div class="form-group">
+							<button type="submit" class="form-control btn btn-dark rounded submit px-3">Criar minha conta
+								grátis</button>
+						</div>
 					</div>
-				</div>
+				</form>
+			</div>
 
 		</body>
 

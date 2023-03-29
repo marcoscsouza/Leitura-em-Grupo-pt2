@@ -30,6 +30,10 @@ public class Usuario {
 	@JoinColumn(name = "idUsuario")
 	private List<Leitura> leituras;
 
+	@OneToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name = "idEndereco")
+	private Endereco endereco;
+
 
 	public Usuario() {
 	}
@@ -133,5 +137,11 @@ public class Usuario {
 		this.leituras = leituras;
 	}
 
+	public Endereco getEndereco() {
+		return endereco;
+	}
 
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
+	}
 }

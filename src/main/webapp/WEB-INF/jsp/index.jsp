@@ -1,10 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
         <!DOCTYPE html>
         <html>
 
         <head>
-            <meta charset="ISO-8859-1">
+            <meta charset="utf-8">
             <title>Grupo de leitura</title>
             <link rel='stylesheet'
                 href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -61,7 +62,7 @@
             <!-- ============================================= FEATURES =========================================================== -->
 
             <div class="container py-4 py-xl-5 shadow-sm p-3">
-                <h1>Características</h1>
+                <h1>Features</h1>
                 <div class="row row-cols-1 row-cols-md-2 ">
                     <div class="col ">
                         <img class="rounded w-100 h-100 fit-cover shadow p-3"
