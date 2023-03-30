@@ -4,6 +4,7 @@ import br.com.marcoscsouza.leituraemgrupo.model.domain.Grupo;
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.GrupoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -32,7 +33,7 @@ public class GrupoService {
 
     public Collection<Grupo> obterLista(Usuario usuario) {
 //        return grupoRepository.obterLista();
-        return grupoRepository.obterLista(usuario.getId());
+        return grupoRepository.obterLista(usuario.getId(), Sort.by(Sort.Direction.ASC,"integrantes"));
     }
 
 }

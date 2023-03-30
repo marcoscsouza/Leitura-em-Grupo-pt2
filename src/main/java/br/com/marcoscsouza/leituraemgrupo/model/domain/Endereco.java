@@ -19,6 +19,13 @@ public class Endereco {
     public Endereco() {
     }
 
+    @Override
+    public String toString() {
+        return String.format(
+                " O endereço %s, %s, %s, %s, %s, %s, %s.",
+                cep, logradouro, bairro, localidade, uf, complemento);
+    }
+
     public Integer getId() {
         return id;
     }

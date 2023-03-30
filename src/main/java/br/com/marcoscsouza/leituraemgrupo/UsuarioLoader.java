@@ -27,6 +27,7 @@ public class UsuarioLoader implements ApplicationRunner {
         userAdmin.setIdade(60);
         userAdmin.setTipo("Admin");
         userAdmin.setNivel("Avançado");
+        userAdmin.setAdmin(true);
         usuarioService.incluir(userAdmin);
 
         System.out.println("ADM cadastrado com sucesso!!" + userAdmin.toString());

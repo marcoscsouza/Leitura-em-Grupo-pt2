@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 		<!DOCTYPE html>
 		<html>
@@ -23,6 +22,10 @@
 
 			<div class="container">
 				<form action="leitura/incluir" method="post">
+
+					<c:set var="botao" value="" />
+
+
 					<h3>Cadastro de Leitura</h3>
 
 					<div class="form-group">
@@ -36,40 +39,53 @@
 
 					</div>
 					<div class="form-group">
-						<label>Grupo presencial:</label> <select name="presencial" class="form-control">
+						<label>Leitura presencial:</label> <select name="presencial" class="form-control">
 							<option value="true" selected>SIM</option>
 							<option value="false">NÃO</option>
 						</select>
 					</div>
 
-					<div class="form-group">
-						<label>Grupo:</label>
-						<select name="grupo" class="form-control">
-							<c:forEach var="g" items="${grupos}">
-								<option value="${g.id}" selected>${g.nomeResponsavel}</option>
-							</c:forEach>
 
-						</select>
+					<div class="form-group">
+						<c:if test="${not empty grupos}">
+							<label>Grupo:</label>
+							<select name="grupo" class="form-control">
+								<c:forEach var="g" items="${grupos}">
+									<option value="${g.id}" selected>${g.nomeResponsavel}</option>
+								</c:forEach>
+							</select>
+						</c:if>
+						<c:if test="${empty grupos}">
+							<c:set var="botao" value="disabled" />
+							<label>Não existem solicitantes cadastrados!</label>
+						</c:if>
 					</div>
 
 
 
+
 					<div class="form-group">
-						<label>Literaturas:</label>
-						<c:forEach var="l" items="${literaturas}">
-							<div class="<div class=" form-check">
-								<label class="form-check-label">
-									<input type="checkbox" class="form-check-input" name="literaturas" id="" value="${l.id}" >
-									${l.titulo}
-								</label>
-							</div>
-						</c:forEach>
+						<c:if test="${not empty literaturas}">
+							<label>Literaturas:</label>
+							<c:forEach var="l" items="${literaturas}">
+								<div class="<div class=" form-check">
+									<label class="form-check-label">
+										<input type="checkbox" class="form-check-input" name="literaturas" id="" value="${l.id}">
+										${l.titulo}
+									</label>
+								</div>
+							</c:forEach>
+						</c:if>
+						<c:if test="${empty literaturas}">
+							<c:set var="botao" value="disabled" />
+							<label>Não existem literaturas cadastradas!</label>
+						</c:if>
 
 					</div>
 
 			</div>
 
-			<button class="btn btn-primary" type="submit">Cadastrar</button>
+			<button ${botao} class="btn btn-primary" type="submit">Cadastrar</button>
 			</form>
 			</div>
 		</body>

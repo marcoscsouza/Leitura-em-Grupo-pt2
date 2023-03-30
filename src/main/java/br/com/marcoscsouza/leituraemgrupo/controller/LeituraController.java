@@ -15,15 +15,11 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 
 @Controller
 public class LeituraController {
-
 	private String msg;
-
 	@Autowired
 	private LeituraService leituraService;
-
 	@Autowired
 	private GrupoService grupoService;
-
 	@Autowired
 	private LiteraturaService literaturaService;
 
@@ -37,7 +33,6 @@ public class LeituraController {
 
 		return "leitura/cadastro";
 	}
-
 	@GetMapping(value = "/leitura/lista")
 	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
 
@@ -70,9 +65,14 @@ public class LeituraController {
 
 		Leitura Leitura = leituraService.obterPorId(id);
 
-		leituraService.excluir(id);
+		try {
+			leituraService.excluir(id);
 
-		msg = "Exclusão do leitura " + Leitura.getDetalhes() + " feito com sucesso!";
+			msg = "Exclusão do leitura " + Leitura.getDetalhes() + " feito com sucesso!";
+		} catch (Exception e) {
+			msg = "Não foi possível excluir o leitura " + Leitura.getDetalhes() ;
+			return "redirect:/leitura/lista";
+		}
 
 		return "redirect:/leitura/lista";
 	}

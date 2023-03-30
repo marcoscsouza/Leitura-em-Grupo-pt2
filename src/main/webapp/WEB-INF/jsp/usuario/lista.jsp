@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
         <!DOCTYPE html>
         <html>
@@ -19,7 +18,7 @@
                 crossorigin="anonymous"></script>
             <meta charset="utf-8">
 
-            <title>Cadastro de Usu�rio</title>
+            <title>Cadastro de Usuário</title>
         </head>
 
         <body>
@@ -33,7 +32,7 @@
             <div class="container-fluid" style="padding-top: 100px;">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="text-center">Lista de Usu�rios</h1>
+                        <h1 class="text-center">Lista de Usuários</h1>
                     </div>
 
                     <c:if test="${not empty mensagem}">
@@ -48,7 +47,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <c:if test="${empty usuarios}">
-                            <h5>N�o existe usuarios cadastrados!</h5>
+                            <h5>Não existe usuários cadastrados!</h5>
                         </c:if>
                     </div>
                 </div>
@@ -56,7 +55,7 @@
                 <div class="row" style="padding-top: 50px;">
                     <div class="col-md-12">
                         <c:if test="${not empty usuarios}">
-                            <h5>Quantidade de usu�rios cadastrados: ${usuarios.size()}!</h5>
+                            <h5>Quantidade de usuários cadastrados: ${usuarios.size()}!</h5>
 
                             <table class="table table-dark table-borderless table-hover table-responsive">
                                 <thead>
@@ -67,10 +66,15 @@
                                         <th>E-mail</th>
                                         <th>Idade</th>
                                         <th>Tipo preferido</th>
-                                        <th>N�vel de Leitura</th>
+                                        <th>Nível de Leitura</th>
+                                        <th>Admin</th>
+                                        <th>Endereço</th>
                                         <th>Grupos</th>
                                         <th>Literaturas</th>
-                                        <th></th>
+                                        <th>Leituras</th>
+                                        <c:if test="${usuario.admin}">
+                                            <th></th>
+                                        </c:if>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -83,11 +87,17 @@
                                             <td>${u.idade}</td>
                                             <td>${u.tipo}</td>
                                             <td>${u.nivel}</td>
+                                            <td>${u.admin}</td>
+                                            <td>${u.endereco.cep}</td>
                                             <td>${u.grupos.size()}</td>
                                             <td>${u.literaturas.size()}</td>
-                                            <td> <button class="btn btn-danger"
-                                                    onclick="window.location.href='/usuario/${u.id}/excluir'"> Excluir
-                                                </button></td>
+                                            <td>${u.leituras.size()}</td>
+                                            <c:if test="${usuario.admin}">
+                                                <td> <button class="btn btn-danger"
+                                                        onclick="window.location.href='/usuario/${u.id}/excluir'">
+                                                        Excluir
+                                                    </button></td>
+                                            </c:if> 
                                         </tr>
                                     </c:forEach>
                                 </tbody>
