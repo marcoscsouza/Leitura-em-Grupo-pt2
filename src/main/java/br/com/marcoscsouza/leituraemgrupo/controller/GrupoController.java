@@ -28,9 +28,7 @@ public class GrupoController {
 
 	@GetMapping(value = "/grupo/lista")
 	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
-		
 		model.addAttribute("grupos", grupoService.obterLista(usuario));
-		
 		model.addAttribute("mensagem", msg);
 		msg = null;
 		
@@ -40,10 +38,8 @@ public class GrupoController {
 	@PostMapping(value = "/grupo/incluir")
 	public String incluir(Grupo grupo, @SessionAttribute("usuario") Usuario usuario) {
 		System.out.println("Cadastrado com sucesso!!" + grupo.toString());
-
 		grupo.setUsuario(usuario);
 		msg = "grupo do " + grupo.getNomeResponsavel() + " criado com sucesso!";
-
 		grupoService.incluir(grupo);
 
 		return "redirect:/grupo/lista";
@@ -51,11 +47,15 @@ public class GrupoController {
 	
 	@GetMapping(value = "/grupo/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
-
 		grupoService.excluir(id);
 
-		msg = "Exclusão do grupo do " + id + " feito com sucesso!";
-//		msg = "Exclusão do grupo feito com sucesso!";
+		try {
+			grupoService.excluir(id);
+			msg = "Exclusão do grupo do " + id + " feito com sucesso!";
+		} catch (Exception e) {
+			msg = "Não foi possível excluir o grupo!";
+			return "redirect:/grupo/lista";
+		}
 
 		return "redirect:/grupo/lista";
 	}

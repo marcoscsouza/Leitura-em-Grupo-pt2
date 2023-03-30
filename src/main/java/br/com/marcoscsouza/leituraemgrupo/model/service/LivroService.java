@@ -4,6 +4,7 @@ import br.com.marcoscsouza.leituraemgrupo.model.domain.Livro;
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.LivroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -27,7 +28,7 @@ public class LivroService {
     }
 
     public Collection<Livro> obterLista(Usuario usuario) {
-        return (Collection<Livro>) livroRepository.obterLista(usuario.getId());
+        return (Collection<Livro>) livroRepository.obterLista(usuario.getId(), Sort.by(Sort.Direction.ASC, "titulo"));
     }
 
     public Livro obterPorId(Integer usuarioId) {

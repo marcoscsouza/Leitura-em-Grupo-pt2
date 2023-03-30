@@ -16,10 +16,8 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 public class LivroController {
 
 	private String msg;
-
 	@Autowired
 	private LivroService livroService;
-
 
 	@GetMapping(value = "/livro")
 	public String telaCadastro() {
@@ -28,40 +26,34 @@ public class LivroController {
 
 	@GetMapping(value = "/livro/lista")
 	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
-
-//		livro.setUsuario(usuario);
-
 		model.addAttribute("livros", livroService.obterLista(usuario));
-
 		model.addAttribute("mensagem", msg);
 		msg = null;
-
 		return "literatura/livro/lista";
 	}
 
 	@PostMapping(value = "/livro/incluir")
 	public String incluir(Livro livro, @SessionAttribute("usuario") Usuario usuario) {
-
 		livro.setUsuario(usuario);
-
 		livroService.incluir(livro);
-
 		msg = "livro " + livro.getTitulo() + " criado com sucesso!";
-
 
 		return "redirect:/livro/lista";
 	}
 
 	@GetMapping(value = "/livro/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
-
 		Livro livro = livroService.obterPorId(id);
 
-		livroService.excluir(id);
+		try {
+			livroService.excluir(id);
+			msg = "Exclusão do livro " + livro.getTitulo() + " feito com sucesso!";
+		} catch (Exception e) {
+			msg = "Não foi possível excluir o livro!"+ livro.getTitulo();
+			return "redirect:/livro/lista";
 
-		msg = "Exclusão do livro " + livro.getTitulo() + " feito com sucesso!";
+		}
 
 		return "redirect:/livro/lista";
 	}
-
 }

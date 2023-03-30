@@ -37,12 +37,14 @@ public class LiteraturaController {
 
 	@GetMapping(value = "/literatura/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
-
 		Literatura literatura = literaturaService.obterPorId(id);
-
-		literaturaService.excluir(id);
-
-		msg = "Exclusão da literatura " + literatura.getTitulo() + " feito com sucesso!";
+		try {
+			literaturaService.excluir(id);
+			msg = "Exclusão da literatura " + literatura.getTitulo() + " feito com sucesso!";
+		} catch (Exception e) {
+			msg = "Não foi possível excluir a literatura!"+ literatura.getTitulo();
+			return "redirect:/literatura/lista";
+		}
 
 		return "redirect:/literatura/lista";
 	}

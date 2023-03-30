@@ -93,11 +93,15 @@
                                             <td>${u.literaturas.size()}</td>
                                             <td>${u.leituras.size()}</td>
                                             <c:if test="${usuario.admin}">
-                                                <td> <button class="btn btn-danger"
-                                                        onclick="window.location.href='/usuario/${u.id}/excluir'">
-                                                        Excluir
-                                                    </button></td>
-                                            </c:if> 
+                                                <td>
+                                                    <c:if test="${usuario.id != u.id}">
+                                                        <button class="btn btn-danger"
+                                                            onclick="window.location.href='/usuario/${u.id}/excluir'">
+                                                            Excluir
+                                                        </button>
+                                                    </c:if>
+                                                </td>
+                                            </c:if>
                                         </tr>
                                     </c:forEach>
                                 </tbody>

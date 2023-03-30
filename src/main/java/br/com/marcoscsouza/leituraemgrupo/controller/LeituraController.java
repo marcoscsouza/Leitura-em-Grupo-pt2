@@ -25,19 +25,14 @@ public class LeituraController {
 
 	@GetMapping(value = "/leitura")
 	public String telaCadastro(Model model, @SessionAttribute("usuario") Usuario usuario) {
-
 		model.addAttribute("grupos", grupoService.obterLista(usuario));
-
 		model.addAttribute("literaturas", literaturaService.obterLista(usuario));
-
 
 		return "leitura/cadastro";
 	}
 	@GetMapping(value = "/leitura/lista")
 	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
-
 		model.addAttribute("leituras", leituraService.obterLista(usuario));
-
 		model.addAttribute("mensagem", msg);
 		msg = null;
 
@@ -46,23 +41,17 @@ public class LeituraController {
 
 	@PostMapping(value = "/leitura/incluir")
 	public String incluir(Leitura leitura, @SessionAttribute("usuario") Usuario usuario) {
-
 		leitura.setUsuario(usuario);
-
 		leituraService.incluir(leitura);
-
 		System.out.println("grupo: " + leitura.getGrupo().getId());
 		System.out.println("Literaturas: " + leitura.getLiteraturas());
-
 		msg = "livro " + leitura.getDetalhes() + " criado com sucesso!";
-
 
 		return "redirect:/leitura/lista";
 	}
 
 	@GetMapping(value = "/leitura/{id}/excluir")
 	public String excluir(@PathVariable Integer id) {
-
 		Leitura Leitura = leituraService.obterPorId(id);
 
 		try {

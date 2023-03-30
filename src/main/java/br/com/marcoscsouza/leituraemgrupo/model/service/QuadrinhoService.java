@@ -4,6 +4,7 @@ import br.com.marcoscsouza.leituraemgrupo.model.domain.Quadrinho;
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.QuadrinhoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -27,7 +28,7 @@ public class QuadrinhoService {
     }
 
     public Collection<Quadrinho> obterLista(Usuario usuario){
-        return (Collection<Quadrinho>) quadrinhoRepository.obterLista(usuario.getId());
+        return (Collection<Quadrinho>) quadrinhoRepository.obterLista(usuario.getId(), Sort.by(Sort.Direction.ASC, "titulo"));
     }
 
     public Quadrinho obterPorId(Integer usuarioId){
