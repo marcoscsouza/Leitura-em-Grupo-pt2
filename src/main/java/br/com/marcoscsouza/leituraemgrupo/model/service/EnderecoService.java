@@ -11,7 +11,6 @@ public class EnderecoService {
     private IEnderecoClient enderecoClient;
 
     public Endereco buscaCep(String cep) {
-
         return enderecoClient.buscaCep(cep);
     }
 }

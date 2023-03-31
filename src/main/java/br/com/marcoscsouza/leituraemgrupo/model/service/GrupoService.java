@@ -16,24 +16,18 @@ public class GrupoService {
     private GrupoRepository grupoRepository;
 
     public Grupo incluir(Grupo grupo) {
-//        return grupoRepository.incluir(grupo);
-
         return grupoRepository.save(grupo);
     }
 
     public void excluir(Integer key) {
-//        return grupoRepository.excluir(key);
         grupoRepository.deleteById(key);
     }
 
     public Collection<Grupo> obterLista() {
-//        return grupoRepository.obterLista();
         return (Collection<Grupo>) grupoRepository.findAll();
     }
 
     public Collection<Grupo> obterLista(Usuario usuario) {
-//        return grupoRepository.obterLista();
         return grupoRepository.obterLista(usuario.getId(), Sort.by(Sort.Direction.ASC,"integrantes"));
     }
-
 }

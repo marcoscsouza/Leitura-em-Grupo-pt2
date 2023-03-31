@@ -23,9 +23,6 @@ public class LiteraturaController {
 
 	@GetMapping(value = "/literatura/lista")
 	public String telaLista(Model model, @SessionAttribute("usuario") Usuario usuario) {
-
-//		livro.setUsuario(usuario);
-
 		model.addAttribute("literaturas", literaturaService.obterLista(usuario));
 
 		model.addAttribute("mensagem", msg);

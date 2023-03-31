@@ -57,7 +57,7 @@
 						</c:if>
 						<c:if test="${empty grupos}">
 							<c:set var="botao" value="disabled" />
-							<label>Não existem solicitantes cadastrados!</label>
+							<h1>Não existem solicitantes cadastrados!</h1>
 						</c:if>
 					</div>
 
@@ -78,7 +78,7 @@
 						</c:if>
 						<c:if test="${empty literaturas}">
 							<c:set var="botao" value="disabled" />
-							<label>Não existem literaturas cadastradas!</label>
+							<h1>Não existem literaturas cadastradas!</h1>
 						</c:if>
 
 					</div>

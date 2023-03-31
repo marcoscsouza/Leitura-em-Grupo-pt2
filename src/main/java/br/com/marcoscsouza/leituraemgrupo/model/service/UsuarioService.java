@@ -12,7 +12,6 @@ public class UsuarioService {
 
     public Usuario autenticar(Usuario usuario) {
         return usuarioRepository.autenticacao(usuario.getEmail(), usuario.getSenha());
-//        return null;
     }
     @Autowired
     private UsuarioRepository usuarioRepository;

@@ -31,7 +31,6 @@ public class AcessoController {
 
         Usuario user = new Usuario(email, senha);
 
-//        user = AcessoRepository.autenticar(user);
         user = usuarioService.autenticar(user);
 
         if (user != null) {
