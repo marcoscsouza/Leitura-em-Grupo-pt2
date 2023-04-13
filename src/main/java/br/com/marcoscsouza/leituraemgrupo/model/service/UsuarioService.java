@@ -3,6 +3,7 @@ package br.com.marcoscsouza.leituraemgrupo.model.service;
 import br.com.marcoscsouza.leituraemgrupo.model.domain.Usuario;
 import br.com.marcoscsouza.leituraemgrupo.model.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Collection;
@@ -25,7 +26,9 @@ public class UsuarioService {
     }
 
     public Collection<Usuario> obterLista() {
-        return (Collection<Usuario>) usuarioRepository.findAll();
+        return (Collection<Usuario>) usuarioRepository.
+                findAll(Sort.by(Sort.Direction.ASC, "nome"));
     }
+
 
 }

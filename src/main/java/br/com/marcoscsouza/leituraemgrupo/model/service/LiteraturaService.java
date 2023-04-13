@@ -25,7 +25,8 @@ public class LiteraturaService {
     }
 
     public Collection<Literatura> obterLista(Usuario usuario) {
-        return (Collection<Literatura>) literaturaRepository.obterLista(usuario.getId(), Sort.by(Sort.Direction.ASC, "titulo"));
+        return (Collection<Literatura>) literaturaRepository.obterLista(usuario.getId(),
+                Sort.by(Sort.Direction.ASC, "titulo"));
     }
 
     public Literatura obterPorId(Integer usuarioId) {

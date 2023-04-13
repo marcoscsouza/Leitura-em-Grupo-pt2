@@ -40,7 +40,7 @@ public class AcessoController {
             return "redirect:/home";
         }
 
-        model.addAttribute("mensagem", "a mensagem para um texto incorreto " + email + " email errado");
+        model.addAttribute("mensagem", "Email ou senha inválidos! tente novamente. ");
 
         return telaLogin();
     }
